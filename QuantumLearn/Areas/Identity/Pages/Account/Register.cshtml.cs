@@ -130,7 +130,14 @@ namespace QuantumLearn.Areas.Identity.Pages.Account
 
                 user.FirstName = Input.FirstName; 
                 user.LastName = Input.LastName;
-                user.ImageDataForUser = Input.ImageDataForUser;
+
+                // get the uploaded file data (if any) and convert it to a byte array via memory stream
+                foreach (var file in Request.Form.Files)  // there will only be one image for "file"
+                {
+                    MemoryStream ms = new MemoryStream();
+                    file.CopyTo(ms);
+                    user.ImageDataForUser = ms.ToArray();
+                }
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
