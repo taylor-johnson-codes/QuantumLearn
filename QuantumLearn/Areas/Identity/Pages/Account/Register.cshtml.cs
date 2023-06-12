@@ -71,6 +71,19 @@ namespace QuantumLearn.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
+            [Required]
+            [StringLength(255, ErrorMessage = "First name can be a maximum of 255 characters.")]
+            [Display(Name = "First Name")]
+            public string FirstName { get; set; }
+
+            [Required]
+            [StringLength(255, ErrorMessage = "Last name can be a maximum of 255 characters.")]
+            [Display(Name = "First Name")]
+            public string LastName { get; set; }
+
+            [Display(Name = "Photo")]
+            public byte[]? ImageDataForUser { get; set; }  // not required; ? allows for null value
+
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
@@ -114,6 +127,10 @@ namespace QuantumLearn.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
+
+                user.FirstName = Input.FirstName; 
+                user.LastName = Input.LastName;
+                user.ImageDataForUser = Input.ImageDataForUser;
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);

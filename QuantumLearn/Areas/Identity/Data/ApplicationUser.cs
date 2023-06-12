@@ -16,4 +16,6 @@ public class ApplicationUser : IdentityUser  // Ctrl+click to see what's built-i
     public string LastName { get; set; }
 
     public byte[]? ImageDataForUser { get; set; }  // not required; ? allows for null value
+
+    // validations are in Register.cshtml.cs file
 }
