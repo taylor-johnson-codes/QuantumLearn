@@ -73,15 +73,15 @@ namespace QuantumLearn.Areas.Identity.Pages.Account
         {
             [Required]
             [StringLength(255, ErrorMessage = "First name can be a maximum of 255 characters.")]
-            [Display(Name = "First Name")]
+            [Display(Name = "First name")]
             public string FirstName { get; set; }
 
             [Required]
             [StringLength(255, ErrorMessage = "Last name can be a maximum of 255 characters.")]
-            [Display(Name = "First Name")]
+            [Display(Name = "Last name")]
             public string LastName { get; set; }
 
-            [Display(Name = "Photo")]
+            [Display(Name = "Upload photo (optional)")]
             public byte[]? ImageDataForUser { get; set; }  // not required; ? allows for null value
 
             /// <summary>
