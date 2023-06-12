@@ -21,6 +21,8 @@
                 <label asp-for="Input.NewEmail" class="form-label"></label>
                 <span asp-validation-for="Input.NewEmail" class="text-danger"></span>
             </div>
+            @*FIGURE OUT:*@
+            <p class="text-danger">Need to figure out how to delete pre-filled email address in New email field</p>
             <br />
             <button id="change-email-button" type="submit" asp-page-handler="ChangeEmail" class="w-100 btn btn-lg btn-primary">Change email</button>
         </form>
