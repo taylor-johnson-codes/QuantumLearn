@@ -52,6 +52,19 @@ namespace QuantumLearn.Areas.Identity.Pages.Account.Manage
         /// </summary>
         public class InputModel
         {
+            [Required]
+            [StringLength(255, ErrorMessage = "First name can be a maximum of 255 characters.")]
+            [Display(Name = "First name")]
+            public string FirstName { get; set; }
+
+            [Required]
+            [StringLength(255, ErrorMessage = "Last name can be a maximum of 255 characters.")]
+            [Display(Name = "Last name")]
+            public string LastName { get; set; }
+
+            [Display(Name = "Upload photo (optional)")]
+            public byte[]? ImageDataForUser { get; set; }  // not required; ? allows for null value
+
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
@@ -65,6 +78,9 @@ namespace QuantumLearn.Areas.Identity.Pages.Account.Manage
         {
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
+            // NEED TO FIGURE OUT HOW TO ADD/EDIT FIRST/LAST NAME & IMAGE ON PROFILE PAGE
+            //var firstName = await _userManager.GetUserAsync(user).Result.FirstName;
+            //var lastName = await _userManager.GetUserAsync(user).Result.LastName;
 
             Username = userName;
 
