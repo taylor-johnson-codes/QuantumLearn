@@ -18,6 +18,11 @@ namespace QuantumLearn.Controllers
             return View();
         }
 
+        public IActionResult NotSetUpYet()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
