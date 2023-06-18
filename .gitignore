@@ -3,16 +3,6 @@
 ## Hiding ConnectionStrings (In VS, R-clicked file, selected ignore & untrack file)
 /QuantumLearn/appsettings.json
 
-## NEEDED THESE FOR OTHER WEB APP; UPDATE WHEN I GET TO THESE PARTS IN THIS WEB APP:
-
-## /Test_ASP
-
-## /Class_Project/Class_Project/appsettings.json
-
-## /Class_Project/Class_Project/myDatabase.db
-## /Class_Project/Class_Project/myDatabase.db-shm
-## /Class_Project/Class_Project/myDatabase.db-wal
-
 ## -----------------------------------------------------------------------------------------
 
 ## VISUAL STUDIO DEFAULT GITIGNORE SECTION:
