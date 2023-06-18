@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewData["Title"] = "Lessons";
+}
+
+<div>
+@*<div class="text-center">*@
+    <h1 class="display-4 text-center">QuantumLearn Lessons</h1>
+    <br />
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <table class="table w-75 table-hover caption-top border-dark table-responsive text-nowrap">
+                <thead>
+                    <tr class="text-center">
+                        <th>Lesson #</th>
+                        <th>Lesson Name</th>
+                        <th>Quizzes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center w-100">1</td>
+                        <td><a asp-controller="Lesson" asp-action="Num1">History of Quantum Computers</a></td>
+                        <td><a asp-controller="Quiz" asp-action="Quiz1">Take Quiz</a></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td><a asp-controller="Lesson" asp-action="Num2">Classical vs Quantum Computers</a></td>
+                        <td>Take Quiz</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">3</td>
+                        <td><a asp-controller="Lesson" asp-action="Num3">Why Learn Quantum Computing</a></td>
+                        <td>Take Quiz</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">4</td>
+                        <td><a asp-controller="Lesson" asp-action="Num4">Qubits, Superposition & Entanglement</a></td>
+                        <td>Take Quiz</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">5</td>
+                        <td><a asp-controller="Lesson" asp-action="Num5">Imaginary Unit</a></td>
+                        <td>Take Quiz</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">6</td>
+                        <td><a asp-controller="Lesson" asp-action="Num6">Qubit State</a></td>
+                        <td>Take Quiz</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">7</td>
+                        <td><a asp-controller="Lesson" asp-action="Num7">Probability</a></td>
+                        <td>Take Quiz</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">8</td>
+                        <td><a asp-controller="Lesson" asp-action="Num8">Qubit Phase</a></td>
+                        <td>Take Quiz</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">9</td>
+                        <td><a asp-controller="Lesson" asp-action="Num9">Qubit Amplitude</a></td>
+                        <td>Take Quiz</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">10</td>
+                        <td><a asp-controller="Lesson" asp-action="Num10">Logic Gates</a></td>
+                        <td>Take Quiz</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">11</td>
+                        <td><a asp-controller="Lesson" asp-action="Num11">Quantum Gates Overview</a></td>
+                        <td>Take Quiz</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">12</td>
+                        <td><a asp-controller="Lesson" asp-action="Num12">Common Quantum Gates</a></td>
+                        <td>Take Quiz</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">13</td>
+                        <td><a asp-controller="Lesson" asp-action="Num13">Quantum Algorithms</a></td>
+                        <td>Take Quiz</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
