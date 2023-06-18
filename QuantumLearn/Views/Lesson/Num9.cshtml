@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Lesson 9";
+}
+
+<h3>Lesson 9:</h3>
+<h1>Qubit Amplitude</h1>
+<br />
+
+<div div class="container border border-dark">
+    <p>
+        In quantum computing, when we talk about the "amplitude" of a qubit, we're referring to the "amount" of each state (|0⟩ or |1⟩) present in the qubit's superposition. Remember our magical coin? It's like how much "headness" and "tailness" the coin has before you look at it.
+        <br /><br />
+        To make it even simpler, let's imagine our magical coin is in a bag with many regular coins. Some are heads, and some are tails. The more heads coins there are in the bag, the greater the "headness" (the amplitude for the |1⟩ state). The more tails coins there are, the greater the "tailness" (the amplitude for the |0⟩ state). When you draw one coin from the bag without looking (make a measurement), you're more likely to draw a state (heads or tails) that has more coins in the bag (greater amplitude).
+        <br /><br />
+        Now, these "amounts" aren't ordinary numbers—they are complex numbers (which means they can involve the square root of negative one, represented as 'i').
+        <br /><br />
+        Just remember: the larger the amplitude of a state, the higher the probability you will measure the qubit in that state. However, the rules of quantum mechanics also say that the sum of the squares of the amplitudes of all possible states must equal 1. This is because when you measure the qubit, it must fall into one of the possible states—you can't draw a coin and find nothing there!
+        <br /><br />
+        Keep in mind, this is quite a simplified explanation. The actual concept involves complex numbers and principles of quantum mechanics, which are a bit more complex and abstract. But the coin analogy should give you a basic understanding of what amplitude means in terms of qubits.
+    </p>
+</div>
+
+<div class="text-center">
+    <br />
+    <a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz9">Take Quiz</a>
+    <br /><br />
+    <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num8">Previous Lesson</a>
+    <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num10">Next Lesson</a>
+    <br /><br />
+    <a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>
+    <br />
+</div>

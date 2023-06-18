@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Lesson 7";
+}
+
+<h3>Lesson 7:</h3>
+<h1>Probability</h1>
+<br />
+
+<div div class="container border border-dark">
+    <p>
+        In quantum computing, the concept of probability is a bit different than what we're used to in our everyday life, because it deals with the peculiar nature of quantum mechanics.
+        <br /><br />
+        In simple terms, let's go back to our magical coin analogy for qubits. Normally, if you flip a regular coin, there's a 50-50 chance—it's either heads or tails. But remember, our qubit is a magical coin. Before you look at it (measure it), it can be both heads and tails at the same time.
+        <br /><br />
+        Now, the "amount" of heads and tails (represented by the numbers α and β that we talked about before) in our magical coin's state affects the chances of seeing heads or tails when we decide to look at it.
+        <br /><br />
+        To get the probability (the chance) of finding the coin in a state—say heads—we take the "amount" of heads (β), multiply it by its complex conjugate (if β is a complex number, its conjugate is derived by changing the sign of its imaginary part), and this gives us the probability of finding the coin showing heads when measured. The same goes for tails.
+        <br /><br />
+        What's weird and wonderful about our magical coin is that it only "chooses" to be heads or tails when we look at it. Before we look, it's in a superposition of states—a mix of heads and tails. But the exact state it will be when we measure it is not certain—it's probabilistic, depending on these "amounts" of heads and tails (α and β).
+        <br /><br />
+        In other words, probability in quantum computing is about the chances of finding a qubit in a particular state when we measure it, which is determined by the state of the qubit just before measurement.
+    </p>
+</div>
+
+<div class="text-center">
+    <br />
+    <a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz7">Take Quiz</a>
+    <br /><br />
+    <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num6">Previous Lesson</a>
+    <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num8">Next Lesson</a>
+    <br /><br />
+    <a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>
+    <br />
+</div>

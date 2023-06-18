@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Lesson 8";
+}
+
+<h3>Lesson 8:</h3>
+<h1>Qubit Phase</h1>
+<br />
+
+<div div class="container border border-dark">
+    <p>
+        To explain phase in simple terms, let's continue using the magical coin analogy for qubits.
+        <br /><br />
+        So far, we know our magical coin can be in a superposition of states—both heads (|1⟩) and tails (|0⟩) at the same time, and when we look at it (measure it), it collapses to either heads or tails. But there's another unique property our magical coin has: "phase".
+        <br /><br />
+        Think of phase as the color of our coin. Let's say our magical coin can change colors between blue and red. This color doesn't change the fact that it's still a coin and can be heads or tails, but it adds extra information about the state of our coin.
+        <br /><br />
+        In the quantum world, this "color" (phase) is important because it can influence how our magical coin behaves when it interacts with other magical coins (qubits). When we do computations in a quantum computer, these interactions matter a lot.
+        <br /><br />
+        But here's the catch: if you look at the coin (measure it), you'll only see if it shows heads or tails, but not its color (phase). The color (phase) kind of disappears when you measure it, but until you do, it can have important effects.
+        <br /><br />
+        In more technical terms, phase refers to a difference in the stages of two wave cycles, which is a fundamental concept in quantum mechanics. But for the sake of simplicity, understanding it as an extra piece of hidden information (like color) that affects how qubits interact is a good start.
+    </p>
+</div>
+
+<div class="text-center">
+    <br />
+    <a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz8">Take Quiz</a>
+    <br /><br />
+    <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num7">Previous Lesson</a>
+    <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num9">Next Lesson</a>
+    <br /><br />
+    <a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>
+    <br />
+</div>

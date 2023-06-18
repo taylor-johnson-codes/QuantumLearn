@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Lesson 6";
+}
+
+<h3>Lesson 6:</h3>
+<h1>Qubit State</h1>
+<br />
+
+<div div class="container border border-dark">
+    <p>
+        A qubit is like a magical coin in the world of quantum computing. Unlike a regular coin that can either be heads or tails, this magical coin (qubit) can be heads, tails, or both at the same time!
+        <br /><br />
+        We use a special notation to describe the state of our magical coin (qubit). This notation is often written as |0⟩ and |1⟩, where |0⟩ represents tails and |1⟩ represents heads. These notations are known as Dirac or "bra-ket" notation. The "|" represents a quantum state and the "⟩" is simply a closing bracket.
+        <br /><br />
+        The weird thing about our magical coin is that it can be in a state where it's both heads and tails at the same time. We might write this as a combination: α|0⟩ + β|1⟩. Here, α and β are numbers that tell us the "amount" of tails and heads in our coin's state.
+        <br /><br />
+        The special rule for our magical coin is that if you square the "amount" of tails (α) and add it to the square of the "amount" of heads (β), it must always equal 1. This is because our coin must always be in some state—it can't just disappear!
+        <br /><br />
+        But there's another twist. When you look at the coin (measure it), it "chooses" to be either just heads or just tails. And it doesn't choose evenly! It's more likely to choose heads if the "amount" of heads (β) is bigger and vice versa. Once it chooses, it forgets about its magical ability and acts like a regular coin until you stop looking at it again. This probabilistic nature of the qubit's state upon measurement is another hallmark of quantum mechanics.
+        <br /><br />
+        Note that until a qubit is measured, we can't know its state—it's only upon measurement that we know whether it's |0⟩ or |1⟩. This is known as the principle of quantum uncertainty.
+    </p>
+</div>
+
+<div class="text-center">
+    <br />
+    <a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz6">Take Quiz</a>
+    <br /><br />
+    <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num5">Previous Lesson</a>
+    <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num7">Next Lesson</a>
+    <br /><br />
+    <a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>
+    <br />
+</div>

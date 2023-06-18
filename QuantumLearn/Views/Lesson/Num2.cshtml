@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "Lesson 2";
+}
+
+<h3>Lesson 2:</h3>
+<h1>Classical Computers vs Quantum Computers</h1>
+<br />
+
+<div div class="container border border-dark">
+    <p>
+        Quantum computers and classical computers are fundamentally different in how they process information. Here is an overview of some key differences:
+        <br /><br />
+        Basic Units of Information:<br />
+        - Classical Computer: The basic unit of information is the bit, which can be either a 0 or a 1.<br />
+        - Quantum Computer: The basic unit of information is the quantum bit or qubit, which can exist in a state of superposition where they can be both 0 and 1 at the same time.
+        <br /><br />
+        Processing of Information:<br />
+        - Classical Computer: Bits are processed in a linear, orderly fashion. For a given input, a classical computer follows a set of instructions to arrive at an output.<br />
+        - Quantum Computer: Qubits can be processed in parallel due to their ability to be in multiple states at once. This allows a quantum computer to evaluate many possibilities simultaneously.
+        <br /><br />
+        Entanglement:<br />
+        - Classical Computer: No concept of entanglement exists. Each bit is independent of the others.<br />
+        - Quantum Computer: Qubits can be entangled, meaning the state of one qubit can be dependent on the state of another, no matter how far apart they are. This is a key resource for quantum computing.
+        <br /><br />
+        Determinism vs. Probabilism:<br />
+        - Classical Computer: Computations are deterministic. For a given input and a given set of instructions, the output is always the same.<br />
+        - Quantum Computer: Computations are probabilistic. The output state of a quantum computation is generally a superposition of states, and when it's measured, we get one of those states based on certain probabilities.
+        <br /><br />
+        Data Density:<br />
+        - Classical Computer: Data density is limited. Each bit can hold one of two possible values, 0 or 1.<br />
+        - Quantum Computer: Due to superposition, a qubit can hold an infinite number of possible values. This means quantum computers can potentially handle much larger amounts of data.
+        <br /><br />
+        Computational Power:<br />
+        - Classical Computer: Can efficiently solve a broad range of problems, but struggles with certain types of complex problems, such as optimization problems, factoring large numbers, simulating quantum systems, etc.<br />
+        - Quantum Computer: Potentially able to solve certain complex problems much more efficiently than classical computers. Algorithms like Shor's and Grover's demonstrate this potential.
+    </p>
+</div>
+
+<div class="text-center">
+    <br />
+    <a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz2">Take Quiz</a>
+    <br /><br />
+    <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num1">Previous Lesson</a>
+    <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num3">Next Lesson</a>
+    <br /><br />
+    <a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>
+    <br />
+</div>

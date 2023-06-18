@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Lesson 10";
+}
+
+<h3>Lesson 10:</h3>
+<h1>Logic Gates</h1>
+<br />
+
+<div div class="container border border-dark">
+    <p>
+        In classical computing, logic gates are the basic building blocks that perform certain operations on one or more bits of data.
+        They are the simplest form of data processors and all digital systems are based on these gates.
+        This review of classical gates will help with understanding quantum gates.
+        <br /><br />
+        There are seven basic types of logic gates:
+        <br /><br />
+        1. AND gate: This gate takes two inputs and gives an output of 1 if both inputs are 1, and 0 otherwise.
+        <br /><br />
+        2. OR gate: This gate gives an output of 1 if at least one of the inputs is 1, and 0 otherwise.
+        <br /><br />
+        3. NOT gate: This gate has only one input and one output. The output is the opposite of the input: if you input 1, you get out 0, and vice versa.
+        <br /><br />
+        4. NAND gate: This gate is the opposite of the AND gate. It gives an output of 0 only when both inputs are 1. In all other cases, it gives an output of 1.
+        <br /><br />
+        5. NOR gate: This gate is the opposite of the OR gate. It gives an output of 1 only when both inputs are 0. In all other cases, it gives an output of 0.
+        <br /><br />
+        6. XOR gate (Exclusive OR): This gate gives an output of 1 only when the inputs are different (one input is 1 and the other is 0).
+        <br /><br />
+        7. XNOR gate (Exclusive NOR): This gate gives an output of 1 when the inputs are the same (either both 1 or both 0).
+        <br /><br />
+        By combining these gates in various ways, you can build circuits that perform complex operations. This is the foundation of digital computing: all computer processors are made up of vast numbers of these gates.
+    </p>
+</div>
+
+<div class="text-center">
+    <br />
+    <a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz10">Take Quiz</a>
+    <br /><br />
+    <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num9">Previous Lesson</a>
+    <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num11">Next Lesson</a>
+    <br /><br />
+    <a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>
+    <br />
+</div>
