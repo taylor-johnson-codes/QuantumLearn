@@ -35,6 +35,7 @@
                 <label asp-for="Input.ConfirmPassword"></label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
+            <br />
             <div>
                 <label asp-for="Input.ImageDataForUser"></label>
                 <input asp-for="Input.ImageDataForUser" class="form-control" autocomplete="photo" aria-required="true" type="file" accept="image/*" />
@@ -42,6 +43,12 @@
             </div>
             <br />
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+            <br /><br />
+            <div>
+                <p>
+                    <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Log in to an existing account</a>
+                </p>
+            </div>
         </form>
     </div>
     <div class="col-md-6 col-md-offset-2">
