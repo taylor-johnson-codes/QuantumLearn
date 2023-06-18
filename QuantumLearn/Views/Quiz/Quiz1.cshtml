@@ -4,5 +4,31 @@
 }
 
 <h3>Lesson 1 Quiz</h3>
-<p>Placeholder space for quiz</p>
-<a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Index">Back to Lessons</a>
+<br />
+
+<form asp-action="" method="post">  @*NOT POSTING ANYWHERE YET - need to setup action*@
+    1. Who developed an algorithm for factoring large numbers efficiently on a quantum computer, sparking major interest in quantum computing?<br />
+    <input type="radio" id="L1Q1-A" name="L1Q1" value="1" onclick="incorrect()">
+    <label for="L1Q1-A">Paul Benioff</label><br>
+    <input type="radio" id="L1Q1-B" name="L1Q1" value="2" onclick="correct()">
+    <label for="L1Q1-B">Peter Shor</label><br>
+    <input type="radio" id="L1Q1-C" name="L1Q1" value="3" onclick="incorrect()">
+    <label for="L1Q1-C">David Deutsch</label>
+    <br /><br />
+    
+    2. When did the era of Commercial Quantum Computing begin?<br />
+    <input type="radio" id="L1Q2-A" name="L1Q2" value="1" onclick="incorrect()">
+    <label for="L1Q2-A">1990s-1999</label><br>
+    <input type="radio" id="L1Q2-B" name="L1Q2" value="2" onclick="incorrect()">
+    <label for="L1Q2-B">2000s-2009</label><br>
+    <input type="radio" id="L1Q2-C" name="L1Q2" value="3" onclick="correct()">
+    <label for="L1Q2-C">2010s-present</label>
+    <br /><br />
+
+    <input class="btn btn-warning" type="submit" value="Submit Answers" />  (this button doesn't work yet)
+</form>
+
+<br />
+<a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num2">Next Lesson</a>
+<br /><br />
+<a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>

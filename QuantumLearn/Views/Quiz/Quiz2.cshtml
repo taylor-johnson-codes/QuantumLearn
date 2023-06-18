@@ -1,8 +1,52 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Lesson 2 Quiz";
 }
 
 <h3>Lesson 2 Quiz</h3>
-<p>Placeholder space for quiz</p>
-<a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Index">Back to Lessons</a>
+<br />
+
+<form asp-action="" method="post">
+    @*NOT POSTING ANYWHERE YET - need to setup action*@
+    1. The basic unit of information in a quantum computer is the bit, which can be either a 0 or a 1.<br />
+    <input type="radio" id="L2Q1-A" name="L2Q1" value="1" onclick="incorrect()">
+    <label for="L2Q1-A">True</label><br>
+    <input type="radio" id="L2Q1-B" name="L2Q1" value="2" onclick="correct()">
+    <label for="L2Q1-B">False</label><br>
+    <br />
+
+    2. Qubits, unlike bits, can be processed in parallel due to their ability to be in multiple states at once.<br />
+    <input type="radio" id="L2Q2-A" name="L2Q2" value="1" onclick="correct()">
+    <label for="L2Q2-A">True</label><br>
+    <input type="radio" id="L2Q2-B" name="L2Q2" value="2" onclick="incorrect()">
+    <label for="L2Q2-B">False</label><br>
+    <br />
+
+    3. In a classical computer, each bit is dependent on the others, a concept referred to as entanglement.<br />
+    <input type="radio" id="L2Q3-A" name="L2Q3" value="1" onclick="incorrect()">
+    <label for="L2Q3-A">True</label><br>
+    <input type="radio" id="L2Q3-B" name="L2Q3" value="2" onclick="correct()">
+    <label for="L2Q3-B">False</label><br>
+    <br />
+
+    4. Computations on a classical computer are probabilistic, which means the output can vary for a given input and a given set of instructions.<br />
+    <input type="radio" id="L2Q4-A" name="L2Q4" value="1" onclick="incorrect()">
+    <label for="L2Q4-A">True</label><br>
+    <input type="radio" id="L2Q4-B" name="L2Q4" value="2" onclick="correct()">
+    <label for="L2Q4-B">False</label><br>
+    <br />
+
+    5. Quantum computers can potentially handle much larger amounts of data than classical computers because a qubit can hold an infinite number of possible values.<br />
+    <input type="radio" id="L2Q5-A" name="L2Q5" value="1" onclick="correct()">
+    <label for="L2Q5-A">True</label><br>
+    <input type="radio" id="L2Q5-B" name="L2Q5" value="2" onclick="incorrect()">
+    <label for="L2Q5-B">False</label><br>
+    <br />
+
+    <input class="btn btn-warning" type="submit" value="Submit Answers" />  (this button doesn't work yet)
+</form>
+
+<br />
+<a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num3">Next Lesson</a>
+<br />
+<br />
+<a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>
