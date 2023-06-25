@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using QuantumLearn.Areas.Identity.Data;
+using QuantumLearn.Models;  // for SeedData.cs to load
+
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
 
@@ -14,6 +16,10 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+// added this section to load static file SeedData.cs
+var context = app.Services.CreateScope().ServiceProvider.GetRequiredService<ApplicationDbContext>();  // give access to context/database for Entity Framework
+SeedData.SeedDatabase(context);
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
