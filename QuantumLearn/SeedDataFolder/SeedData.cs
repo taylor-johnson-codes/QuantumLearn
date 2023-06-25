@@ -1,24 +1,35 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 using QuantumLearn.Areas.Identity.Data;
+using QuantumLearn.Models;
 using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Xml.Linq;
 
-namespace QuantumLearn.Models
+namespace QuantumLearn.SeedDataFolder
 {
     // use a static class so it can be used without creating an instance of it
     public static class SeedData
     {
-        public static void SeedDatabase(ApplicationDbContext context)
+        public static void SeedDatabase(ApplicationDbContext context)  // from ASP.NET class
         {
+            
+            
+            
+            
+            
+            
+            
             // ensures any pending migrations are being applied to the database
-            context.Database.Migrate();
+            //context.Database.Migrate();
             // from ASP.NET class slides: slide 15 of module8 - Entity Framwork Core - part1
             // also described here: https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/applying?tabs=dotnet-core-cli
             // SEE THIS MSFT LINK BEFORE DEPLOYING WEB APP; NEED TO CHANGE THE WAY IT'S MIGRATED 
 
-            if (context.Questions.Count() == 0)  // UPDATE THIS PART AFTER ADD ALL OF THE SEED DATA SO IT ALL GETS ADDED
+
+            // from ASP.NET class
+            /*
+            if (modelBuilder.Questions.Count() == 0)  // UPDATE THIS PART AFTER ADD ALL OF THE SEED DATA SO IT ALL GETS ADDED
             {
                 // -----------------------------------------------QUIZ 1 QUESTIONS----------------------------------------------- //
 
@@ -36,7 +47,7 @@ namespace QuantumLearn.Models
                     Text = "2. When did the era of Commercial Quantum Computing begin?"
                 });
 
-                context.AddRange(Quiz1QuestionsList);
+                modelBuilder.AddRange(Quiz1QuestionsList);
 
                 // -----------------------------------------------QUIZ 2 QUESTIONS----------------------------------------------- //
 
@@ -60,7 +71,7 @@ namespace QuantumLearn.Models
 
 
 
-                context.AddRange(Quiz2QuestionsList);
+                modelBuilder.AddRange(Quiz2QuestionsList);
 
                 // -----------------------------------------------QUIZ 1 ANSWERS----------------------------------------------- //
 
@@ -70,7 +81,7 @@ namespace QuantumLearn.Models
                 Quiz1AnswersList.Add(new Answer()
                 {
                     Id = 1,
-                    QuestionId = 1, 
+                    QuestionId = 1,
                     Text = "Paul Benioff",
                     IsCorrect = false,
                 });
@@ -116,7 +127,7 @@ namespace QuantumLearn.Models
                     IsCorrect = true,
                 });
 
-                context.AddRange(Quiz1AnswersList);
+                modelBuilder.AddRange(Quiz1AnswersList);
 
                 // -----------------------------------------------QUIZ 2 ANSWERS----------------------------------------------- //
 
@@ -156,12 +167,13 @@ namespace QuantumLearn.Models
                     IsCorrect = false,
                 });
 
-                context.AddRange(Quiz2AnswersList);
+                modelBuilder.AddRange(Quiz2AnswersList);
 
 
 
-                context.SaveChanges();
+                modelBuilder.SaveChanges();
             }
+            */
         }
     }
 }

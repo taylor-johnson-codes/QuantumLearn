@@ -30,10 +30,10 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
 
         // from https://learn.microsoft.com/en-us/aspnet/core/data/ef-rp/intro?view=aspnetcore-6.0&tabs=visual-studio
-        //builder.Entity<SeedData>().ToTable("SeedData");  // can't be here because it's a static class; had to move this functionality to Program.cs
         builder.Entity<Question>().ToTable("Question");
         builder.Entity<Answer>().ToTable("Answer");
         builder.Entity<QuizResult>().ToTable("QuizResult");
+        //builder.Entity<SeedData>().ToTable("SeedData");  // can't be here because it's a static class; had to move this functionality to Program.cs
     }
 }
 
