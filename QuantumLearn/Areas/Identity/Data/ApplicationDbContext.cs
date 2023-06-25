@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using QuantumLearn.Areas.Identity.Data;
+using QuantumLearn.Models;
 
 namespace QuantumLearn.Areas.Identity.Data;
 
@@ -13,6 +14,12 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
     }
 
+    // from https://learn.microsoft.com/en-us/aspnet/core/data/ef-rp/intro?view=aspnetcore-6.0&tabs=visual-studio
+    public DbSet<SeedData> SeedDatas { get; set; }
+    public DbSet<Question> Questions { get; set; }
+    public DbSet<Answer> Answers { get; set; }
+    public DbSet<QuizResult> QuizResults { get; set; }
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -21,6 +28,12 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         // Add your customizations after calling base.OnModelCreating(builder);
 
         builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
+
+        // from https://learn.microsoft.com/en-us/aspnet/core/data/ef-rp/intro?view=aspnetcore-6.0&tabs=visual-studio
+        builder.Entity<SeedData>().ToTable("SeedData");
+        builder.Entity<Question>().ToTable("Question");
+        builder.Entity<Answer>().ToTable("Answer");
+        builder.Entity<QuizResult>().ToTable("QuizResult");
     }
 }
 
