@@ -14,12 +14,6 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
     }
 
-    // from https://learn.microsoft.com/en-us/aspnet/core/data/ef-rp/intro?view=aspnetcore-6.0&tabs=visual-studio
-    //public DbSet<SeedData> SeedDatas { get; set; }  // can't be here because it's a static class; had to move this functionality to Program.cs
-    //public DbSet<Question> Questions { get; set; }
-    //public DbSet<Answer> Answers { get; set; }
-    //public DbSet<QuizResult> QuizResults { get; set; }
-
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -29,12 +23,11 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 
         builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
 
-        // from https://learn.microsoft.com/en-us/aspnet/core/data/ef-rp/intro?view=aspnetcore-6.0&tabs=visual-studio
-        //builder.Entity<Question>().ToTable("Question");
-        //builder.Entity<Answer>().ToTable("Answer");
-        //builder.Entity<QuizResult>().ToTable("QuizResult");
-        //builder.Entity<SeedData>().ToTable("SeedData");  // can't be here because it's a static class; had to move this functionality to Program.cs
     }
+
+    public DbSet<QuantumLearn.Models.Question>? Question { get; set; }
+    public DbSet<QuantumLearn.Models.QuizResult>? QuizResult { get; set; }
+    public DbSet<QuantumLearn.Models.Answer>? Answer { get; set; }
 }
 
 public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<ApplicationUser>
