@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using QuantumLearn.Areas.Identity.Data;
+using QuantumLearn.Configuration;
 using QuantumLearn.Models;
 
 namespace QuantumLearn.Areas.Identity.Data;
@@ -22,6 +23,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         // Add your customizations after calling base.OnModelCreating(builder);
 
         builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
+        builder.ApplyConfiguration(new QuestionConfiguration());
 
     }
 
