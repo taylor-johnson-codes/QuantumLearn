@@ -14,7 +14,7 @@ namespace QuantumLearn.SeedDataFolder
         public static void SeedDatabase(ApplicationDbContext context)  // from ASP.NET class
         {
             
-            
+            // DELETE WHOLE SEED DATA FOLDER AND THIS FILE
             
             
             
