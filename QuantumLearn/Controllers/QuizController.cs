@@ -9,6 +9,13 @@ namespace QuantumLearn.Controllers
 {
     public class QuizController : Controller
     {
+        // inject the Entity Framework database; inject the DbContext class in here
+        private ApplicationDbContext _dbContext;
+        public QuizController(ApplicationDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
         public IActionResult Index()
         {
             return RedirectToAction("Index", "Lesson");
@@ -16,7 +23,18 @@ namespace QuantumLearn.Controllers
 
         public IActionResult Quiz1()
         {
-            return View();
+            // Q1Q1 means Quiz 1 Question 1
+            Question? Q1Q1 = _dbContext.Question.FirstOrDefault(ques => ques.Id == 1); // lambda expression; ? so null can be a result
+            Question? Q1Q2 = _dbContext.Question.FirstOrDefault(ques => ques.Id == 2);
+
+            if (Q1Q1 == null || Q1Q2 == null)
+                Console.WriteLine("Error!!! Question not pulled from database.");
+
+            List<Question> PassQuestions = new List<Question>();
+            PassQuestions.Add(Q1Q1);
+            PassQuestions.Add(Q1Q2);
+
+            return View(PassQuestions);  // pass the list to the view
         }
 
         public IActionResult Quiz2()

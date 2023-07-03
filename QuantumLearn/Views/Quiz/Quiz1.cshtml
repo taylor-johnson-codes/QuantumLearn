@@ -1,12 +1,42 @@
-﻿
+﻿@*@using QuantumLearn.Areas.Identity.Data*@
+@model List<Question>
+
 @{
     ViewData["Title"] = "Lesson 1 Quiz";
 }
 
-<h3>Lesson 1 Quiz</h3>
-<br />
+<div class="mainDiv">
+    <h3>Lesson 1 Quiz</h3>
+    <br />
+    
+    @if (Model != null)
+    {
+        <form asp-action="" method="post">  @*NOT POSTING ANYWHERE YET - need to setup action*@
 
-<form asp-action="" method="post">  @*NOT POSTING ANYWHERE YET - need to setup action*@
+            <h5>PULLING FROM BACKEND/DATABASE:</h5>
+            
+            <p>@Model.FirstOrDefault(ques => ques.Id == 1).Text</p>
+            @*insert radio input with answer options*@
+
+            <p>@Model.FirstOrDefault(ques => ques.Id == 2).Text</p>
+            @*insert radio input with answer options*@
+
+
+
+            <input class="btn btn-warning" type="submit" value="Submit Answers" />  (this button doesn't work yet)
+            <br /><br>
+            <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num2">Next Lesson</a>
+            <br /><br />
+            <a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>
+        </form>
+    }
+    else
+    {
+        <p>An error has occurred. No questions found.</p>
+    }
+    <br /><br />
+
+    <h5>HARD-CODED TO FRONT END (WILL REMOVE THIS SECTION):</h5>
     1. Who developed an algorithm for factoring large numbers efficiently on a quantum computer, sparking major interest in quantum computing?<br />
     <input type="radio" id="L1Q1-A" name="L1Q1" value="1" onclick="incorrect()">
     <label for="L1Q1-A">Paul Benioff</label><br>
@@ -15,7 +45,7 @@
     <input type="radio" id="L1Q1-C" name="L1Q1" value="3" onclick="incorrect()">
     <label for="L1Q1-C">David Deutsch</label>
     <br /><br />
-    
+
     2. When did the era of Commercial Quantum Computing begin?<br />
     <input type="radio" id="L1Q2-A" name="L1Q2" value="1" onclick="incorrect()">
     <label for="L1Q2-A">1990s-1999</label><br>
@@ -25,10 +55,6 @@
     <label for="L1Q2-C">2010s-present</label>
     <br /><br />
 
-    <input class="btn btn-warning" type="submit" value="Submit Answers" />  (this button doesn't work yet)
-</form>
 
-<br />
-<a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num2">Next Lesson</a>
-<br /><br />
-<a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>
+    
+</div>
