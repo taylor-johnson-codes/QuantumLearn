@@ -24,7 +24,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 
         builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
         builder.ApplyConfiguration(new QuestionConfiguration());
-
+        builder.ApplyConfiguration(new AnswerConfiguration());
     }
 
     public DbSet<QuantumLearn.Models.Question>? Question { get; set; }
