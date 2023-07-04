@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using QuantumLearn.Models;
 using QuantumLearn.Areas.Identity.Data;
-
+using QuantumLearn.ViewModels;
 
 namespace QuantumLearn.Controllers
 {
@@ -23,18 +23,36 @@ namespace QuantumLearn.Controllers
 
         public IActionResult Quiz1()
         {
-            // Q1Q1 means Quiz 1 Question 1
+            // Quiz 1 Question 1 Answer 1-3
             Question? Q1Q1 = _dbContext.Question.FirstOrDefault(ques => ques.Id == 1); // lambda expression; ? so null can be a result
+            Answer? Q1Q1A1 = _dbContext.Answer.FirstOrDefault(ans => ans.Id == 1);
+            Answer? Q1Q1A2 = _dbContext.Answer.FirstOrDefault(ans => ans.Id == 2);
+            Answer? Q1Q1A3 = _dbContext.Answer.FirstOrDefault(ans => ans.Id == 3);
+            // Quiz 1 Question 2 Answer 1-3
             Question? Q1Q2 = _dbContext.Question.FirstOrDefault(ques => ques.Id == 2);
+            Answer? Q1Q2A1 = _dbContext.Answer.FirstOrDefault(ans => ans.Id == 4);
+            Answer? Q1Q2A2 = _dbContext.Answer.FirstOrDefault(ans => ans.Id == 5);
+            Answer? Q1Q2A3 = _dbContext.Answer.FirstOrDefault(ans => ans.Id == 6);
 
-            if (Q1Q1 == null || Q1Q2 == null)
-                Console.WriteLine("Error!!! Question not pulled from database.");
+            List<Question> _questions = new List<Question>();
+            _questions.Add(Q1Q1);
+            _questions.Add(Q1Q2);
 
-            List<Question> PassQuestions = new List<Question>();
-            PassQuestions.Add(Q1Q1);
-            PassQuestions.Add(Q1Q2);
+            List<Answer> _answers = new List<Answer>();
+            _answers.Add(Q1Q1A1);
+            _answers.Add(Q1Q1A2);
+            _answers.Add(Q1Q1A3);
+            _answers.Add(Q1Q2A1);
+            _answers.Add(Q1Q2A2);
+            _answers.Add(Q1Q2A3);
 
-            return View(PassQuestions);  // pass the list to the view
+            QuestionAnswerViewModel quesAnsVM = new QuestionAnswerViewModel()
+            {
+                QuestionList = _questions,
+                AnswerList = _answers
+            };
+
+            return View(quesAnsVM);
         }
 
         public IActionResult Quiz2()
