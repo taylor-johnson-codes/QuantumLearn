@@ -9,7 +9,7 @@ namespace QuantumLearn.Models
         public int QuestionId { get; set; }
         public int AnswerId { get; set; }
 
-        // from ChatGPT
+        // ChatGPT format
         public virtual Question Questions { get; set; }
         public virtual Answer Answers { get; set; }
 

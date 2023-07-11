@@ -9,7 +9,7 @@ namespace QuantumLearn.Models
         public bool IsCorrect { get; set; }
         public int QuestionId { get; set; }
 
-        // from ChatGPT
+        // ChatGPT format
         public virtual Question Questions { get; set; }
 
         // formatting I copied from https://learn.microsoft.com/en-us/aspnet/core/data/ef-rp/intro?view=aspnetcore-6.0&tabs=visual-studio
