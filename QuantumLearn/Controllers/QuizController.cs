@@ -34,18 +34,19 @@ namespace QuantumLearn.Controllers
 
             // if ModelState IS valid, add data to QuizResult table (if user is logged in), and return
 
-            string currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            Console.WriteLine("test 1");  // GET THIS
-            Console.WriteLine($"Current user id (1st in SubmitQuiz action): {currentUserId}");  // GET THIS
+            // the form from the frontend bring backs key-value pairs for each question; e.g. {[L1Q1, {3}]}
+            // KEY - the name of the question group, e.g. brought back string value L1Q1 for the key from name="L1Q1" in the view
+            // VALUE - a list of string values, e.g., {3} is a list with one value, the string 3 that came from selecting the third answer option on the frontend with value="3"
 
-            // ChatGPT code, I don't understand
-            foreach (var question in _dbContext.Question)
+            string currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            foreach (var question in _dbContext.Question)  // BRINGS BACK ALL QUESTIONS FROM DB. ONLY NEED IT TO BRING BACK QUIZ 1 QUESTIONS, ADD THAT PROPERTY TO TABLE
             {
                 int answerId;
-                Console.WriteLine("test 2");  // GET THIS 7 TIMES
 
-                // THIS IF STMT ISN'T CATCHING ANYTHING/NOT WORKING
-                if (int.TryParse(form["answer_" + question.Id], out answerId))  
+                // the form sends back string values for integers, so convert string to int
+                // ["L1Q" + question.Id] is creating L1Q1, L1Q2, etc.
+                if (int.TryParse(form["L1Q" + question.Id], out answerId))  
                 {
                     var result = new QuizResult
                     {
@@ -53,25 +54,18 @@ namespace QuantumLearn.Controllers
                         QuestionId = question.Id,
                         AnswerId = answerId
                     };
-                    Console.WriteLine("test 3"); // DON'T GET THIS
-                    _dbContext.QuizResult.Add(result);  // DOESN'T ADD ANYTHING TO DB
-                    Console.WriteLine("test 4"); // DON'T GET THIS
+                    _dbContext.QuizResult.Add(result);
                 }
             }
 
             _dbContext.SaveChanges();
-            Console.WriteLine("test 5");  // GET THIS 
-            Console.WriteLine($"Current user id (2nd in SubmitQuiz action): {currentUserId}");  // GET THIS 
-
             return RedirectToAction("Results");
         }
 
         public IActionResult Results()
         {
             string currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            Console.WriteLine($"Current user id (Results action): {currentUserId}");  // GET THIS 
 
-            // NOTHING IS BEING SAVED IN QUIZRESULT DB
             var results = _dbContext.QuizResult.Where(r => r.UserId == currentUserId)
                                                 .Include(r => r.Questions)
                                                 .Include(r => r.Answers)

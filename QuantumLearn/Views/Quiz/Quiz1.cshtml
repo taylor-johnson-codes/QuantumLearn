@@ -13,7 +13,7 @@
 
             <h5 class="text-primary">FYI - PULLING FROM BACKEND/DATABASE:</h5><br>
 
-            @Model.QuestionList.FirstOrDefault(ques => ques.Id == 1).Text <br>
+            <p class="fw-bold m-0">@Model.QuestionList.FirstOrDefault(ques => ques.Id == 1).Text</p>
             <input type="radio" id="L1Q1-A" name="L1Q1" value="1">
             <label for="L1Q1-A">@Model.AnswerList.FirstOrDefault(ans => ans.Id == 1).Text</label><br>
             <input type="radio" id="L1Q1-B" name="L1Q1" value="2">
@@ -22,17 +22,21 @@
             <label for="L1Q1-C">@Model.AnswerList.FirstOrDefault(ans => ans.Id == 3).Text</label>
             <br /><br />
 
-            @Model.QuestionList.FirstOrDefault(ques => ques.Id == 2).Text <br>
-            <input type="radio" id="L1Q2-A" name="L1Q2" value="1">
+            <p class="fw-bold m-0">@Model.QuestionList.FirstOrDefault(ques => ques.Id == 2).Text</p>
+            <input type="radio" id="L1Q2-A" name="L1Q2" value="4">
             <label for="L1Q2-A">@Model.AnswerList.FirstOrDefault(ans => ans.Id == 4).Text</label><br>
-            <input type="radio" id="L1Q2-B" name="L1Q2" value="2">
+            <input type="radio" id="L1Q2-B" name="L1Q2" value="5">
             <label for="L1Q2-B">@Model.AnswerList.FirstOrDefault(ans => ans.Id == 5).Text</label><br>
-            <input type="radio" id="L1Q2-C" name="L1Q2" value="3">
+            <input type="radio" id="L1Q2-C" name="L1Q2" value="6">
             <label for="L1Q2-C">@Model.AnswerList.FirstOrDefault(ans => ans.Id == 6).Text</label>
             <br /><br />
 
+             @* id="" and for="" go together so the user is able to click on either the radio circle or the answer text to select the answer *@
+             @* name="" and value="" both go the backend controller *@
+             @* name="" also groups the radio buttons together so the user can only select one answer for each question*@
+
             <input class="btn btn-warning" type="submit" value="Submit Answers"/>
-            <br /><br>
+            <hr>
             <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num2">Next Lesson</a>
             <br /><br />
             <a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>

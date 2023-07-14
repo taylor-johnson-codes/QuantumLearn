@@ -1,6 +1,16 @@
-﻿
+﻿@model IEnumerable<QuantumLearn.Models.QuizResult>
+
 @{
-    ViewData["Title"] = "Results";
+    ViewData["Title"] = "Quiz Results";
 }
 
-<p>Got to Results view.  Data for logged in user should be stored in QuizResult table.</p>
+<div class="mainDiv">
+    <h3 class="text-primary">You answered @ViewBag.CorrectAnswers out of @ViewBag.TotalQuestions questions correctly.</h3><br />
+
+    @foreach (var result in Model)
+    {
+        <p class="fw-bold m-0">@result.Questions.Text</p>
+        <p class="m-0">Your answer: @result.Answers.Text</p>
+        <p>Correct answer: @Model.FirstOrDefault(q => q.QuestionId == result.QuestionId && q.Answers.IsCorrect)?.Answers.Text</p>
+    }
+</div>
