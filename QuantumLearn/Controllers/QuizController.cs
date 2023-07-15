@@ -48,11 +48,15 @@ namespace QuantumLearn.Controllers
                 // ["L1Q" + question.Id] is creating L1Q1, L1Q2, etc.
                 if (int.TryParse(form["L1Q" + question.Id], out answerId))  
                 {
+                    // if currentUserId && question.Id already exists in the DB, replace answerId with newest answerId submitted
+                    // only want to create a new QuizResult entry if the user hasn't answered that question.Id yet, then results page will only show question/answer one time
+
                     var result = new QuizResult
                     {
                         UserId = currentUserId,
                         QuestionId = question.Id,
-                        AnswerId = answerId
+                        AnswerId = answerId,
+                        //QuizNum = 1,2,3 etc
                     };
                     _dbContext.QuizResult.Add(result);
                 }
@@ -62,13 +66,14 @@ namespace QuantumLearn.Controllers
             return RedirectToAction("Results");
         }
 
-        public IActionResult Results()
+        public IActionResult Results(int passedQuizNum)  // SET UP REST OF CODE ABOVE TO PASS THIS VALUE
         {
             string currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             var results = _dbContext.QuizResult.Where(r => r.UserId == currentUserId)
                                                 .Include(r => r.Questions)
                                                 .Include(r => r.Answers)
+                                                //.Include(r => r.QuizNum.value == passedQuizNum)
                                                 .ToList();
 
             int correctAnswers = results.Count(r => r.Answers.IsCorrect);

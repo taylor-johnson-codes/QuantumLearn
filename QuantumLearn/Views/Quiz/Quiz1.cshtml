@@ -35,6 +35,10 @@
              @* name="" and value="" both go the backend controller *@
              @* name="" also groups the radio buttons together so the user can only select one answer for each question*@
 
+            @*hidden so the user can't see; sending back which quiz this is for when submitting the form to the backend*@
+            @*<label asp-for="QuizNum"></label>  MAYBE DONT NEED THIS LINE*@
+            @*<input asp-for="QuizNum" type="hidden" value="1" /></td*@
+
             <input class="btn btn-warning" type="submit" value="Submit Answers"/>
             <hr>
             <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num2">Next Lesson</a>
