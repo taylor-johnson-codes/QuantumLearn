@@ -76,9 +76,9 @@ namespace QuantumLearn.Controllers
                                                 //.Include(r => r.QuizNum.value == passedQuizNum)
                                                 .ToList();
 
-            int correctAnswers = results.Count(r => r.Answers.IsCorrect);
+            //int correctAnswers = results.Count(r => r.Answers.IsCorrect);
 
-            ViewBag.CorrectAnswers = correctAnswers;
+            //ViewBag.CorrectAnswers = correctAnswers;
             ViewBag.TotalQuestions = results.Count;
 
             return View(results);

@@ -11,6 +11,7 @@ namespace QuantumLearn.Configuration
     {
         public void Configure(EntityTypeBuilder<Answer> builder)
         {
+            /*
             builder.HasData(
                 // Quiz 1 Question 1
                 new Answer { Id = 1, Text = "Paul Benioff", IsCorrect = false, QuestionId = 1 },
@@ -34,6 +35,7 @@ namespace QuantumLearn.Configuration
                 // Quiz 12
                 // Quiz 13
             );
+            */
         }
     }
 }

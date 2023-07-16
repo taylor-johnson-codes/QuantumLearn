@@ -11,6 +11,7 @@ namespace QuantumLearn.Configuration
     {
         public void Configure(EntityTypeBuilder<Question> builder)
         {
+            /*
             builder.HasData(
                 // Quiz 1
                 new Question { Id = 1, Text = "Who developed an algorithm for factoring large numbers efficiently on a quantum computer, sparking major interest in quantum computing?" },
@@ -34,6 +35,7 @@ namespace QuantumLearn.Configuration
                 // Quiz 12
                 // Quiz 13
             );
+            */
         }
     }
 }

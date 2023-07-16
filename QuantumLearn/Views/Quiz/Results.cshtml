@@ -9,8 +9,8 @@
 
     @foreach (var result in Model)
     {
-        <p class="fw-bold m-0">@result.Questions.Text</p>
-        <p class="m-0">Your answer: @result.Answers.Text</p>
-        <p>Correct answer: @Model.FirstOrDefault(q => q.QuestionId == result.QuestionId && q.Answers.IsCorrect)?.Answers.Text</p>
+        @*<p class="fw-bold m-0">@result.Questions.Text</p>*@
+        @*<p class="m-0">Your answer: @result.Answers.Text</p>*@
+        @*<p>Correct answer: @Model.FirstOrDefault(q => q.QuestionId == result.QuestionId && q.Answers.IsCorrect)?.Answers.Text</p>*@
     }
 </div>
