@@ -71,15 +71,15 @@ namespace QuantumLearn.Controllers
             string currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             var results = _dbContext.QuizResult.Where(r => r.UserId == currentUserId)
-                                                .Include(r => r.Questions)
-                                                .Include(r => r.Answers)
+                                                //.Include(r => r.Questions)
+                                                //.Include(r => r.Answers)
                                                 //.Include(r => r.QuizNum.value == passedQuizNum)
                                                 .ToList();
 
             //int correctAnswers = results.Count(r => r.Answers.IsCorrect);
 
             //ViewBag.CorrectAnswers = correctAnswers;
-            ViewBag.TotalQuestions = results.Count;
+            //ViewBag.TotalQuestions = results.Count;
 
             return View(results);
         }
