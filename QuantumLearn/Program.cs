@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using QuantumLearn.Areas.Identity.Data;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,10 +21,9 @@ builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
 // This code was just needed once
-// I updated the models with new required fields, so I deleted the existing DB and its data and started over with a new DB
-var context = app.Services.CreateScope().ServiceProvider.GetRequiredService<ApplicationDbContext>();  // gives access to context/database for Entity Framework
+//var context = app.Services.CreateScope().ServiceProvider.GetRequiredService<ApplicationDbContext>();  // gives access to context/database for Entity Framework
 //context.Database.EnsureDeleted();  // if database exists, delete it
-context.Database.EnsureCreated();  // if database doesn't exist, create it (otherwise do nothing)
+//context.Database.EnsureCreated();  // if database doesn't exist, create it (otherwise do nothing)
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -33,7 +33,7 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseAuthentication();;
+app.UseAuthentication();
 
 app.UseAuthorization();
 
