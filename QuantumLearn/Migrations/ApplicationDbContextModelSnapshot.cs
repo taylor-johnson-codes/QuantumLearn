@@ -259,7 +259,7 @@ namespace QuantumLearn.Migrations
 
                     b.HasIndex("QuestionId");
 
-                    b.ToTable("Answer");
+                    b.ToTable("Answer", (string)null);
 
                     b.HasData(
                         new
@@ -320,7 +320,7 @@ namespace QuantumLearn.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Question");
+                    b.ToTable("Question", (string)null);
 
                     b.HasData(
                         new
@@ -384,7 +384,7 @@ namespace QuantumLearn.Migrations
 
                     b.HasIndex("QuestionId");
 
-                    b.ToTable("QuizResult");
+                    b.ToTable("QuizResult", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
