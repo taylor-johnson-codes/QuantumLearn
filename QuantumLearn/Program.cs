@@ -19,24 +19,11 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-
-
-
-
-/* from stackoverflow
-var db = new YourDataContext(optionsBuilder.Options);
-db.Database.EnsureDeleted();
-db.Database.Migrate();
-*/
-
-// from ASP class; trying to delete existing DB and create new because i updated the models w/ new required fields
-var context = app.Services.CreateScope().ServiceProvider.GetRequiredService<ApplicationDbContext>();  // give access to context/database for Entity Framework
-context.Database.EnsureDeleted();  // if database exists, delete it and start with no pre-existing database
-context.Database.EnsureCreated();  // if database doesn't exist, then create it (otherwise do nothing)
-
-
-
-
+// This code was just needed once
+// I updated the models with new required fields, so I deleted the existing DB and its data and started over with a new DB
+var context = app.Services.CreateScope().ServiceProvider.GetRequiredService<ApplicationDbContext>();  // gives access to context/database for Entity Framework
+//context.Database.EnsureDeleted();  // if database exists, delete it
+context.Database.EnsureCreated();  // if database doesn't exist, create it (otherwise do nothing)
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
