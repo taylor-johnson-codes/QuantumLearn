@@ -14,13 +14,13 @@ namespace QuantumLearn.Configuration
             /*
             builder.HasData(
                 // Quiz 1 Question 1
-                new Answer { Id = 1, Text = "Paul Benioff", IsCorrect = false, QuestionId = 1 },
-                new Answer { Id = 2, Text = "Peter Shor", IsCorrect = true, QuestionId = 1 },
-                new Answer { Id = 3, Text = "David Deutsch", IsCorrect = false, QuestionId = 1 },
+                new Answer { Id = 1, Text = "Paul Benioff", IsCorrect = false, QuestionId = 1, OptionNum = 1 },
+                new Answer { Id = 2, Text = "Peter Shor", IsCorrect = true, QuestionId = 1, OptionNum = 2 },
+                new Answer { Id = 3, Text = "David Deutsch", IsCorrect = false, QuestionId = 1, OptionNum = 3 },
                 // Quiz 1 Question 2
-                new Answer { Id = 4, Text = "1990s - 1999", IsCorrect = false, QuestionId = 2 },
-                new Answer { Id = 5, Text = "2000s - 2009", IsCorrect = false, QuestionId = 2 },
-                new Answer { Id = 6, Text = "2010s - Present", IsCorrect = true, QuestionId = 2 }
+                new Answer { Id = 4, Text = "1990s - 1999", IsCorrect = false, QuestionId = 2, OptionNum = 1 },
+                new Answer { Id = 5, Text = "2000s - 2009", IsCorrect = false, QuestionId = 2, OptionNum = 2 },
+                new Answer { Id = 6, Text = "2010s - Present", IsCorrect = true, QuestionId = 2, OptionNum = 3 }
 
                 // Quiz 2
                 // Quiz 3
