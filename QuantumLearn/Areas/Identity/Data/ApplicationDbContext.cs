@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using QuantumLearn.Areas.Identity.Data;
 using QuantumLearn.Configuration;
 using QuantumLearn.Models;
 
@@ -27,9 +25,9 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         builder.ApplyConfiguration(new AnswerConfiguration());
     }
 
-    public DbSet<QuantumLearn.Models.Question>? Question { get; set; }
-    public DbSet<QuantumLearn.Models.QuizResult>? QuizResult { get; set; }
-    public DbSet<QuantumLearn.Models.Answer>? Answer { get; set; }
+    public DbSet<Question>? Question { get; set; }
+    public DbSet<QuizResult>? QuizResult { get; set; }
+    public DbSet<Answer>? Answer { get; set; }
 }
 
 // move this to Config folder like Ques & Ans Configs

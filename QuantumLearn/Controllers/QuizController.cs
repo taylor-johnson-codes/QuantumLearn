@@ -1,11 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authorization;
 using QuantumLearn.Models;
 using QuantumLearn.Areas.Identity.Data;
 using QuantumLearn.ViewModels;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace QuantumLearn.Controllers
