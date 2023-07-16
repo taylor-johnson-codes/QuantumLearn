@@ -11,16 +11,15 @@ namespace QuantumLearn.Configuration
     {
         public void Configure(EntityTypeBuilder<Answer> builder)
         {
-            /*
             builder.HasData(
                 // Quiz 1 Question 1
-                new Answer { Id = 1, Text = "Paul Benioff", IsCorrect = false, QuestionId = 1, OptionNum = 1 },
-                new Answer { Id = 2, Text = "Peter Shor", IsCorrect = true, QuestionId = 1, OptionNum = 2 },
-                new Answer { Id = 3, Text = "David Deutsch", IsCorrect = false, QuestionId = 1, OptionNum = 3 },
+                new Answer { Id = 1, QuizNum = 1, QuestionId = 1, Text = "Paul Benioff", IsCorrect = false, OptionNum = 1 },
+                new Answer { Id = 2, QuizNum = 1, QuestionId = 1, Text = "Peter Shor", IsCorrect = true, OptionNum = 2 },
+                new Answer { Id = 3, QuizNum = 1, QuestionId = 1, Text = "David Deutsch", IsCorrect = false, OptionNum = 3 },
                 // Quiz 1 Question 2
-                new Answer { Id = 4, Text = "1990s - 1999", IsCorrect = false, QuestionId = 2, OptionNum = 1 },
-                new Answer { Id = 5, Text = "2000s - 2009", IsCorrect = false, QuestionId = 2, OptionNum = 2 },
-                new Answer { Id = 6, Text = "2010s - Present", IsCorrect = true, QuestionId = 2, OptionNum = 3 }
+                new Answer { Id = 4, QuizNum = 1, QuestionId = 2, Text = "1990s - 1999", IsCorrect = false, OptionNum = 1 },
+                new Answer { Id = 5, QuizNum = 1, QuestionId = 2, Text = "2000s - 2009", IsCorrect = false, OptionNum = 2 },
+                new Answer { Id = 6, QuizNum = 1, QuestionId = 2, Text = "2010s - Present", IsCorrect = true, OptionNum = 3 }
 
                 // Quiz 2
                 // Quiz 3
@@ -35,7 +34,6 @@ namespace QuantumLearn.Configuration
                 // Quiz 12
                 // Quiz 13
             );
-            */
         }
     }
 }
