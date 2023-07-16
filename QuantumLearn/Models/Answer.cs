@@ -2,12 +2,14 @@
 {
     public class Answer
     {
-        public int Id { get; set; }
+        public int Id { get; set; }  // primary key
         public string Text { get; set; }
         public bool IsCorrect { get; set; }
         public int OptionNum { get; set; }
-        public int QuestionId { get; set; }
+        public int QuizNum { get; set; }
+        public int QuestionId { get; set; }  // foreign key
 
-        public virtual ICollection<Question> Questions { get; set; }
+        // one answer is NOT linked to multiple questions, so I don't think I need this collection
+        //public virtual ICollection<Question> Questions { get; set; }
     }
 }
