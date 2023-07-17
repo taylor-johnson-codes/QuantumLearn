@@ -6,6 +6,7 @@ namespace QuantumLearn.ViewModels
     {
         public List<Question> QuestionList { get; set; }
         public List<Answer> AnswerList { get; set; }
+        public List<QuizResult> QuizResultList { get; set; }
     }
 }
 
