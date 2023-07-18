@@ -34,7 +34,10 @@ namespace QuantumLearn.Controllers
             // KEY - the name of the question group, e.g. brought back string value L1Q1 for the key from name="L1Q1" in the view
             // VALUE - a list of string values, e.g., {3} is a list with one value, the string 3 that came from selecting the third answer option on the frontend with value="3"
 
-            foreach (var ques in _dbContext.Question.Where(ques => ques.QuizNum == 1))  
+            int currentQuizNum = int.Parse(form["formQuizNum"]);  // formQuizNum is the key; the value is the quiz number the form is from
+            // for error handling, upgrade int.Parse() to TryParse() or Try {}Catch{}
+
+            foreach (var ques in _dbContext.Question.Where(ques => ques.QuizNum == currentQuizNum))  
             {
                 var result = new QuizResult
                 {
@@ -42,14 +45,14 @@ namespace QuantumLearn.Controllers
                     QuestionId = ques.Id,
                     // the form from the view is brought back to the controller as key-value pairs all in string format; example: {[L1Q1, {3}]}
                     // when the model field is coded as an int data type, the string needs to be converted to int
-                    AnswerId = int.Parse(form["L1Q" + ques.Id]),  // the form group name is the key (L1Q1), and AnswerId will equal the value of the key-value pair (3)
-                    QuizNum = int.Parse(form["formQuizNum"])  // formQuizNum is the key, 1 is the value; so QuizNum will equal 1
+                    AnswerId = int.Parse(form["L1Q" + ques.Id]),  // the form group name is the key (e.g. L1Q1), and AnswerId will equal the value of the key-value pair (e.g. 3)
+                    QuizNum = currentQuizNum
                 };
                 _dbContext.QuizResult.Add(result);
             }
 
             _dbContext.SaveChanges();
-            return RedirectToAction("Results", new { passQuizNum = int.Parse(form["formQuizNum"]) });  
+            return RedirectToAction("Results", new { passQuizNum = currentQuizNum });  
             // passing QuizNum value to the Results action (the second parameter has to be an object)
         }
 
