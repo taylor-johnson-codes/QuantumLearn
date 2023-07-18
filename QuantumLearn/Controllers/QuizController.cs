@@ -3,6 +3,8 @@ using QuantumLearn.Models;
 using QuantumLearn.Areas.Identity.Data;
 using QuantumLearn.ViewModels;
 using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Linq;
 
 namespace QuantumLearn.Controllers
 {
@@ -34,26 +36,39 @@ namespace QuantumLearn.Controllers
             // KEY - the name of the question group, e.g. brought back string value L1Q1 for the key from name="L1Q1" in the view
             // VALUE - a list of string values, e.g., {3} is a list with one value, the string 3 that came from selecting the third answer option on the frontend with value="3"
 
-            int currentQuizNum = int.Parse(form["formQuizNum"]);  // formQuizNum is the key; the value is the quiz number the form is from
-            // for error handling, upgrade int.Parse() to TryParse() or Try {}Catch{}
+            string currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            int currentQuizNum = int.Parse(form["formQuizNum"]);    // the form from the view is brought back to the controller as key-value pairs all in string format; example: {[L1Q1, {3}]}
+                                                                    // formQuizNum is the key; the value is the quiz number the form is from
+                                                                    // when the model field is coded as an int data type, the string needs to be converted to int
+                                                                    // for error handling, upgrade int.Parse() to TryParse() or Try {}Catch{}
 
             foreach (var ques in _dbContext.Question.Where(ques => ques.QuizNum == currentQuizNum))  
             {
-                var result = new QuizResult
+                int currentAnsId = int.Parse(form["L1Q" + ques.Id]);  // the form group name is the key (e.g. L1Q1), and currentAnsId will equal the value of the key-value pair (e.g. 3)
+
+                // check the database for an existing entry
+                QuizResult? entry = _dbContext.QuizResult.Where(res => res.UserId == currentUserId && res.QuestionId == ques.Id).FirstOrDefault();
+
+                if (entry != null)  // if an entry already exists, update it with the newly submitted answer
                 {
-                    UserId = User.FindFirstValue(ClaimTypes.NameIdentifier),
-                    QuestionId = ques.Id,
-                    // the form from the view is brought back to the controller as key-value pairs all in string format; example: {[L1Q1, {3}]}
-                    // when the model field is coded as an int data type, the string needs to be converted to int
-                    AnswerId = int.Parse(form["L1Q" + ques.Id]),  // the form group name is the key (e.g. L1Q1), and AnswerId will equal the value of the key-value pair (e.g. 3)
-                    QuizNum = currentQuizNum
-                };
-                _dbContext.QuizResult.Add(result);
+                    entry.AnswerId = currentAnsId;
+                }
+                else  // otherwise, create a new entry
+                {
+                    QuizResult result = new QuizResult
+                    {
+                        UserId = currentUserId,
+                        QuestionId = ques.Id,
+                        AnswerId = currentAnsId,
+                        QuizNum = currentQuizNum
+                    };
+                    _dbContext.QuizResult.Add(result);
+                }
             }
 
             _dbContext.SaveChanges();
-            return RedirectToAction("Results", new { passQuizNum = currentQuizNum });  
-            // passing QuizNum value to the Results action (the second parameter has to be an object)
+            return RedirectToAction("Results", new { passQuizNum = currentQuizNum });  // passing QuizNum value to the Results action (the second parameter has to be an object)
         }
 
         public IActionResult Results(int passQuizNum)
@@ -64,11 +79,6 @@ namespace QuantumLearn.Controllers
             List<Question> quesList = _dbContext.Question.Where(ques => ques.QuizNum == passQuizNum).ToList();
             List<Answer> ansList = _dbContext.Answer.Where(ans => ans.QuizNum == passQuizNum).ToList();
             List<QuizResult> resultsList = _dbContext.QuizResult.Where(res => res.UserId == currentUserId && res.QuizNum == passQuizNum).ToList();
-
-            // Number of correct answer to send to view
-            //int correctAnswers = ansList.Count(r => r.IsCorrect);
-            //ViewBag.CorrectAnswers = correctAnswers;
-            //ViewBag.TotalQuestions = quesList.Count;
 
             QuestionAnswerViewModel quesAnsVM = new QuestionAnswerViewModel()
             {
