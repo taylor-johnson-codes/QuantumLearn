@@ -92,7 +92,6 @@ namespace QuantumLearn.Controllers
                 {
                     QuestionList = quesList,
                     AnswerList = ansList,
-                    QuizResultList = null  // results list sent via ViewBag
                 };
 
                 return View(quesAnsVM);
