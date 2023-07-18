@@ -12,8 +12,8 @@
     {
         <form asp-controller="Quiz" asp-action="SubmitQuiz" method="post">
 
-            <h5 class="text-primary">FYI - PULLING FROM BACKEND/DATABASE:</h5>
-            <p>nested for each loop</p>
+            <h5 class="text-primary">FYI - PULLING FROM BACKEND/DATABASE</h5>
+            <p class ="text-primary">All Quiz 1 frontend and backend coding is finalized; need to copy/paste it to all other quizzes</p>
 
             @foreach (var ques in Model.QuestionList.Where(ques => ques.QuizNum == 1))
             {
