@@ -5,9 +5,9 @@
     ViewData["Title"] = "Quiz Results";
 }
 
-@*variables that will be displayed in the mainDiv*@
+@*variables for values that will be displayed in the mainDiv*@
 @{
-    QuizResult aResultRow = Model.QuizResultList.FirstOrDefault();
+    QuizResult aResultRow = Model.QuizResultList.FirstOrDefault();  // this is just to get currentQuizNum
     int currentQuizNum = aResultRow.QuizNum;
     int userCorrectNum = 0;
     int totalQuesNum = Model.QuestionList.Count;
@@ -15,19 +15,18 @@
 
 <div class="mainDiv">
     <h1>Quiz @currentQuizNum Results</h1><hr />
-    @*<h3 class="text-primary">You answered @ViewBag.CorrectAnswers out of @ViewBag.TotalQuestions questions correctly.</h3><hr />*@
     @foreach (var result in Model.QuizResultList)
     {
         @*for the question*@
-        var currentResultQuesID = result.QuestionId;
-        var aQuestionRow = Model.QuestionList.FirstOrDefault(ques => ques.Id == currentResultQuesID);
+        int currentResultQuesID = result.QuestionId;
+        Question aQuestionRow = Model.QuestionList.FirstOrDefault(ques => ques.Id == currentResultQuesID);
 
         @*for the correct answer*@
-        var correctAnswerRow = Model.AnswerList.FirstOrDefault(ans => ans.QuestionId == currentResultQuesID && ans.IsCorrect == true);
+        Answer correctAnswerRow = Model.AnswerList.FirstOrDefault(ans => ans.QuestionId == currentResultQuesID && ans.IsCorrect == true);
 
         @*for the user's answer*@
-        var currentResultAnsID = result.AnswerId;
-        var anAnswerRow = Model.AnswerList.FirstOrDefault(ans => ans.Id == currentResultAnsID);
+        int currentResultAnsID = result.AnswerId;
+        Answer anAnswerRow = Model.AnswerList.FirstOrDefault(ans => ans.Id == currentResultAnsID);
         if (currentResultAnsID == correctAnswerRow.Id)
         {
             userCorrectNum++;
@@ -50,6 +49,5 @@
         }
     }
 
-    @*DOESN'T DISPLAY CORRECTLY UNTIL FIX DB TO OVER RIDE ANSWERS IF USER IS RETAKING TEST*@
     <h3 class="text-primary">You answered @userCorrectNum out of @totalQuesNum questions correctly.</h3>
 </div>
