@@ -6,15 +6,6 @@
         public string Text { get; set; }
         public int QuizNum { get; set; }
 
-        /* I NEED 2-5 DIFFERENT ANSWER IDS/FOREIGN KEYS SO I DONT THINK THIS WILL WORK FOR ME
-        // two answers are the minimum options required for True/False questions
-        public int AnsOption1 { get; set; }
-        public int AnsOption2 { get; set; }
-        public int? AnsOption3 { get; set; }
-        public int? AnsOption4 { get; set; }
-        public int? AnsOption5 { get; set; 
-        */ 
-
         // one question is linked to multiple answers (for True/False and multiple choice)
         public virtual ICollection<Answer> Answers { get; set; }
 

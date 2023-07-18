@@ -8,8 +8,5 @@
         public int OptionNum { get; set; }
         public int QuizNum { get; set; }
         public int QuestionId { get; set; }  // foreign key
-
-        // one answer is NOT linked to multiple questions, so I don't think I need this collection
-        //public virtual ICollection<Question> Questions { get; set; }
     }
 }
