@@ -1,22 +1,23 @@
 ﻿@* THIS VIEW IS FOR LOGGED-IN USERS *@
 
 @model QuantumLearn.ViewModels.QuestionAnswerViewModel
-@*the model brings in 3 lists*@
-
-@{
-    ViewData["Title"] = "Quiz Results";
-}
+@*the model brings in 3 lists and the quiz number*@
 
 @*variables for values that will be displayed in the mainDiv*@
 @{
-    QuizResult aResultRow = Model.QuizResultList.FirstOrDefault();  // this is just to get currentQuizNum
-    int currentQuizNum = aResultRow.QuizNum;
+    int quizNum = Model.QuizNum;
+    //QuizResult aResultRow = Model.QuizResultList.FirstOrDefault();  // this is just to get currentQuizNum
+    //int currentQuizNum = aResultRow.QuizNum;
     int userCorrectNum = 0;
     int totalQuesNum = Model.QuestionList.Count;
 }
 
+@{
+    ViewData["Title"] = $"Quiz {quizNum} Results";
+}
+
 <div class="mainDiv">
-    <h1>Quiz @currentQuizNum Results</h1><hr />
+    <h1>Quiz @quizNum Results</h1><hr />
     @foreach (var result in Model.QuizResultList)
     {
         @*for the question*@
@@ -52,4 +53,13 @@
     }
 
     <h3 class="text-primary">You answered @userCorrectNum out of @totalQuesNum questions correctly.</h3>
+    <hr>
+    @{
+        int nextLessonNum = quizNum;
+        nextLessonNum++;
+        string nextLesson = $"Num{nextLessonNum}";
+    }
+    <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="@nextLesson">Next Lesson</a>
+    <br /><br />
+    <a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>
 </div>
