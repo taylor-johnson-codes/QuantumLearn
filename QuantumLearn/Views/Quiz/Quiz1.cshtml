@@ -20,7 +20,7 @@
                 <p class="fw-bold m-0">@ques.Text</p>
                 @foreach (var ans in Model.AnswerList.Where(ans => ans.QuestionId == ques.Id))
                 {
-                    <input type="radio" id="@("ansID" + ans.Id)" name="@($"L{quizNum}Q{ques.Id}")" value="@ans.Id">
+                    <input type="radio" id="@("ansID" + ans.Id)" name="@($"L{quizNum}Q{ques.Id}")" value="@ans.Id" required>
                     <label for="@("ansID" + ans.Id)">@ans.Text</label><br>
                 }
                 <br />
