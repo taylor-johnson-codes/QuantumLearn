@@ -38,7 +38,7 @@ namespace QuantumLearn.Controllers
             {
                 foreach (var ques in _dbContext.Question.Where(ques => ques.QuizNum == currentQuizNum))
                 {
-                    int currentAnsId = int.Parse(form["L1Q" + ques.Id]);  // the form group name is the key (e.g. L1Q1), and currentAnsId will equal the value of the key-value pair (e.g. 3)
+                    int currentAnsId = int.Parse(form[$"L{currentQuizNum}Q{ques.Id}"]);  // the form group name is the key (e.g. L1Q1), and currentAnsId will equal the value of the key-value pair (e.g. 3)
 
                     // check the database for an existing entry
                     QuizResult? entry = _dbContext.QuizResult.Where(res => res.UserId == currentUserId && res.QuestionId == ques.Id).FirstOrDefault();
@@ -70,7 +70,7 @@ namespace QuantumLearn.Controllers
 
                 foreach (var ques in _dbContext.Question.Where(ques => ques.QuizNum == currentQuizNum))
                 {
-                    int currentAnsId = int.Parse(form["L1Q" + ques.Id]);  // the form group name is the key (e.g. L1Q1), and currentAnsId will equal the value of the key-value pair (e.g. 3)
+                    int currentAnsId = int.Parse(form[$"L{currentQuizNum}Q{ques.Id}"]);  // the form group name is the key (e.g. L1Q1), and currentAnsId will equal the value of the key-value pair (e.g. 3)
 
                     QuizResult result = new QuizResult
                     {
@@ -136,7 +136,18 @@ namespace QuantumLearn.Controllers
 
         public IActionResult Quiz2()
         {
-            return View();
+            int quizNum = 2;
+            List<Question> quesList = _dbContext.Question.Where(ques => ques.QuizNum == quizNum).ToList();
+            List<Answer> ansList = _dbContext.Answer.Where(ans => ans.QuizNum == quizNum).ToList();
+
+            QuestionAnswerViewModel quesAnsVM = new QuestionAnswerViewModel()
+            {
+                QuizNum = quizNum,
+                QuestionList = quesList,
+                AnswerList = ansList
+            };
+
+            return View(quesAnsVM);
         }
 
         public IActionResult Quiz3()
