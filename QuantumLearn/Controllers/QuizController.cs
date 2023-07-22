@@ -84,12 +84,14 @@ namespace QuantumLearn.Controllers
 
                 ViewBag.ResultsList = resultsList;
 
-                // Two lists to send to view
+                // Info to to send to view
+                int quizNum = currentQuizNum;
                 List<Question> quesList = _dbContext.Question.Where(ques => ques.QuizNum == currentQuizNum).ToList();
                 List<Answer> ansList = _dbContext.Answer.Where(ans => ans.QuizNum == currentQuizNum).ToList();
 
                 QuestionAnswerViewModel quesAnsVM = new QuestionAnswerViewModel()
                 {
+                    QuizNum = currentQuizNum,
                     QuestionList = quesList,
                     AnswerList = ansList,
                 };
@@ -102,13 +104,15 @@ namespace QuantumLearn.Controllers
         {
             string currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            // Three lists to send to view
+            // Info to to send to view
+            int quizNum = passQuizNum;
             List<Question> quesList = _dbContext.Question.Where(ques => ques.QuizNum == passQuizNum).ToList();
             List<Answer> ansList = _dbContext.Answer.Where(ans => ans.QuizNum == passQuizNum).ToList();
             List<QuizResult> resultsList = _dbContext.QuizResult.Where(res => res.UserId == currentUserId && res.QuizNum == passQuizNum).ToList();
 
             QuestionAnswerViewModel quesAnsVM = new QuestionAnswerViewModel()
             {
+                QuizNum = passQuizNum,
                 QuestionList = quesList,
                 AnswerList = ansList,
                 QuizResultList = resultsList
