@@ -2,9 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using QuantumLearn.Models;
 
-// The Question table with properties is already in the database; this is to add seed data to it.
-// Resource used: https://code-maze.com/migrations-and-seed-data-efcore/
-
 namespace QuantumLearn.Configuration
 {
     public class QuestionConfiguration : IEntityTypeConfiguration<Question>
