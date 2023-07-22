@@ -3,17 +3,11 @@
 @model QuantumLearn.ViewModels.QuestionAnswerViewModel
 @*the model brings in 2 lists and the quiz number*@
 
-@*variables for values that will be displayed in the mainDiv*@
 @{
     List<QuizResult> resultsList = ViewBag.ResultsList;
-    //QuizResult aResultRow = resultsList.FirstOrDefault();  // this is just to get currentQuizNum
-    //int currentQuizNum = aResultRow.QuizNum;
     int quizNum = Model.QuizNum;
     int userCorrectNum = 0;
     int totalQuesNum = Model.QuestionList.Count;
-}
-
-@{
     ViewData["Title"] = $"Quiz {quizNum} Results";
 }
 
