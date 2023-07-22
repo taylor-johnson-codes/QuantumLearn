@@ -1,9 +1,13 @@
 ﻿@model QuantumLearn.ViewModels.QuestionAnswerViewModel
 @*the model brings in the quiz number and its list of questions and list of answers*@
 
-@{ int quizNum = Model.QuizNum; }
+@{
+    int quizNum = Model.QuizNum;
+}
 
-@{ ViewData["Title"] = $"Lesson {quizNum} Quiz"; }
+@{
+    ViewData["Title"] = $"Lesson {quizNum} Quiz";
+}
 
 <div class="mainDiv">
     <h3>Lesson @Model.QuizNum Quiz</h3><br />
