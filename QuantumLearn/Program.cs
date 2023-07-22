@@ -16,7 +16,7 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// This code was just needed once
+// This code was used to recreate the database when the models and model configurations (seed data) were changed
 //var context = app.Services.CreateScope().ServiceProvider.GetRequiredService<ApplicationDbContext>();  // gives access to context/database for Entity Framework
 //context.Database.EnsureDeleted();  // if database exists, delete it
 //context.Database.EnsureCreated();  // if database doesn't exist, create it (otherwise do nothing)
