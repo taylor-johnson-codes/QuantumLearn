@@ -119,12 +119,14 @@ namespace QuantumLearn.Controllers
 
         public IActionResult Quiz1()
         {
-            // Two lists to send to view
-            List<Question> quesList = _dbContext.Question.Where(ques => ques.QuizNum == 1).ToList();
-            List<Answer> ansList = _dbContext.Answer.Where(ans => ans.QuizNum == 1).ToList();
+            // Info to send to view via the ViewModel
+            int quizNum = 1;
+            List<Question> quesList = _dbContext.Question.Where(ques => ques.QuizNum == quizNum).ToList();
+            List<Answer> ansList = _dbContext.Answer.Where(ans => ans.QuizNum == quizNum).ToList();
 
             QuestionAnswerViewModel quesAnsVM = new QuestionAnswerViewModel()
             {
+                QuizNum = quizNum,
                 QuestionList = quesList,
                 AnswerList = ansList
             };

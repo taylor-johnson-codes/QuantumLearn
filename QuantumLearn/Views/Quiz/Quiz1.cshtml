@@ -1,26 +1,22 @@
 ﻿@model QuantumLearn.ViewModels.QuestionAnswerViewModel
-@*model brings in a list of questions and a list of answers for Quiz 1*@
+@*the model brings in the quiz number and its list of questions and list of answers*@
 
-@{
-    ViewData["Title"] = "Lesson 1 Quiz";
-}
+@{ int quizNum = Model.QuizNum; }
+
+@{ ViewData["Title"] = $"Lesson {quizNum} Quiz"; }
 
 <div class="mainDiv">
-    <h3>Lesson 1 Quiz</h3><br />
+    <h3>Lesson @Model.QuizNum Quiz</h3><br />
     
     @if (Model != null)
     {
         <form asp-controller="Quiz" asp-action="SubmitQuiz" method="post">
-
-            <h5 class="text-primary">FYI - PULLING FROM BACKEND/DATABASE</h5>
-            <p class ="text-primary">All Quiz 1 frontend and backend coding is finalized; need to copy/paste it to all other quizzes</p>
-
-            @foreach (var ques in Model.QuestionList.Where(ques => ques.QuizNum == 1))
+            @foreach (var ques in Model.QuestionList.Where(ques => ques.QuizNum == quizNum))
             {
                 <p class="fw-bold m-0">@ques.Text</p>
                 @foreach (var ans in Model.AnswerList.Where(ans => ans.QuestionId == ques.Id))
                 {
-                    <input type="radio" id="@("ansID" + ans.Id)" name="@("L1Q" + ques.Id)" value="@ans.Id">
+                    <input type="radio" id="@("ansID" + ans.Id)" name="@($"L{quizNum}Q{ques.Id}")" value="@ans.Id">
                     <label for="@("ansID" + ans.Id)">@ans.Text</label><br>
                 }
                 <br />
@@ -32,19 +28,23 @@
             @* "required" only needs to be in one of the group's answer inputs and it will apply to the whole group*@
 
             @*hidden so the user can't see; sending which quiz this is for when submitting the form to the backend*@
-            @*<label asp-for="QuizNum"></label>  MAYBE DONT NEED A LABEL FOR HIDDEN INPUT*@
             <input name="formQuizNum" type="hidden" value="@Model.QuestionList.First().QuizNum" />
 
             <input class="btn btn-warning" type="submit" value="Submit Answers"/>
             <hr>
-            <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num2">Next Lesson</a>
+            @{
+                int nextLessonNum = quizNum;
+                nextLessonNum++;
+                string nextLesson = $"Num{nextLessonNum}";
+            }
+            <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="@nextLesson">Next Lesson</a>
             <br /><br />
             <a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>
         </form>
     }
     else
     {
-        <p>An error has occurred. No questions found.</p>
+        <p>An error has occurred. Please notify the site administrator.</p>
     }
     <br /><br />
 </div>
