@@ -121,10 +121,10 @@ namespace QuantumLearn.Controllers
             return View(quesAnsVM);
         }
 
-        public IActionResult Quiz1()
+        public IActionResult QuizContent(int passedQuizNum)
         {
             // Info to send to view via the ViewModel
-            int quizNum = 1;
+            int quizNum = passedQuizNum;
             List<Question> quesList = _dbContext.Question.Where(ques => ques.QuizNum == quizNum).ToList();
             List<Answer> ansList = _dbContext.Answer.Where(ans => ans.QuizNum == quizNum).ToList();
 
@@ -135,100 +135,85 @@ namespace QuantumLearn.Controllers
                 AnswerList = ansList
             };
 
-            return View(quesAnsVM);
+            return View("Quiz", quesAnsVM);
+        }
+
+        public IActionResult Quiz1()
+        {
+            int quizNum = 1;
+            return RedirectToAction("QuizContent", new { passedQuizNum = quizNum });  // passing QuizNum value to the QuizContent action (the second parameter has to be an object)
         }
 
         public IActionResult Quiz2()
         {
             int quizNum = 2;
-            List<Question> quesList = _dbContext.Question.Where(ques => ques.QuizNum == quizNum).ToList();
-            List<Answer> ansList = _dbContext.Answer.Where(ans => ans.QuizNum == quizNum).ToList();
-
-            QuestionAnswerViewModel quesAnsVM = new QuestionAnswerViewModel()
-            {
-                QuizNum = quizNum,
-                QuestionList = quesList,
-                AnswerList = ansList
-            };
-
-            return View(quesAnsVM);
+            return RedirectToAction("QuizContent", new { passedQuizNum = quizNum });
         }
 
         public IActionResult Quiz3()
         {
             int quizNum = 3;
-            List<Question> quesList = _dbContext.Question.Where(ques => ques.QuizNum == quizNum).ToList();
-            List<Answer> ansList = _dbContext.Answer.Where(ans => ans.QuizNum == quizNum).ToList();
-
-            QuestionAnswerViewModel quesAnsVM = new QuestionAnswerViewModel()
-            {
-                QuizNum = quizNum,
-                QuestionList = quesList,
-                AnswerList = ansList
-            };
-
-            return View(quesAnsVM);
+            return RedirectToAction("QuizContent", new { passedQuizNum = quizNum });
         }
 
         public IActionResult Quiz4()
         {
             int quizNum = 4;
-            List<Question> quesList = _dbContext.Question.Where(ques => ques.QuizNum == quizNum).ToList();
-            List<Answer> ansList = _dbContext.Answer.Where(ans => ans.QuizNum == quizNum).ToList();
-
-            QuestionAnswerViewModel quesAnsVM = new QuestionAnswerViewModel()
-            {
-                QuizNum = quizNum,
-                QuestionList = quesList,
-                AnswerList = ansList
-            };
-
-            return View(quesAnsVM);
+            return RedirectToAction("QuizContent", new { passedQuizNum = quizNum });
         }
 
         public IActionResult Quiz5()
         {
-            return View();
+            int quizNum = 5;
+            return RedirectToAction("QuizContent", new { passedQuizNum = quizNum });
         }
 
         public IActionResult Quiz6()
         {
-            return View();
+            int quizNum = 6;
+            return RedirectToAction("QuizContent", new { passedQuizNum = quizNum });
         }
 
         public IActionResult Quiz7()
         {
-            return View();
+            int quizNum = 7;
+            return RedirectToAction("QuizContent", new { passedQuizNum = quizNum });
         }
 
         public IActionResult Quiz8()
         {
-            return View();
+            int quizNum = 8;
+            return RedirectToAction("QuizContent", new { passedQuizNum = quizNum });
         }
 
         public IActionResult Quiz9()
         {
-            return View();
+            int quizNum = 9;
+            return RedirectToAction("QuizContent", new { passedQuizNum = quizNum });
         }
 
         public IActionResult Quiz10()
         {
-            return View();
+            int quizNum = 10;
+            return RedirectToAction("QuizContent", new { passedQuizNum = quizNum });
         }
 
         public IActionResult Quiz11()
         {
-            return View();
+            int quizNum = 11;
+            return RedirectToAction("QuizContent", new { passedQuizNum = quizNum });
         }
 
         public IActionResult Quiz12()
         {
-            return View();
+            int quizNum = 12;
+            return RedirectToAction("QuizContent", new { passedQuizNum = quizNum });
         }
 
         public IActionResult Quiz13()
         {
-            return View();
+            int quizNum = 13;
+            return RedirectToAction("QuizContent", new { passedQuizNum = quizNum });
         }
     }
 }
