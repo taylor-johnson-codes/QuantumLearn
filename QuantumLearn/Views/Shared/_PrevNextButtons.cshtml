@@ -1,0 +1,25 @@
+﻿@model QuantumLearn.ViewModels.QuestionAnswerViewModel
+
+@{
+    // for Previous Lesson and Next Lesson buttons
+    int prevLessonNum = Model.QuizNum;
+    --prevLessonNum;
+    string prevLesson = $"Num{prevLessonNum}";
+    int nextLessonNum = Model.QuizNum;
+    nextLessonNum++;
+    string nextLesson = $"Num{nextLessonNum}";
+}
+
+<div class="text-center">
+    @{
+        if (Model.QuizNum != 1)
+        {
+            <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="@prevLesson">Previous Lesson</a>
+        }
+        if (Model.QuizNum != 13)
+        {
+        <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="@nextLesson">Next Lesson</a><br /><br />
+        }
+    }
+    <a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>
+</div>
