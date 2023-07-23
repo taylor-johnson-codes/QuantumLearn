@@ -156,12 +156,34 @@ namespace QuantumLearn.Controllers
 
         public IActionResult Quiz3()
         {
-            return View();
+            int quizNum = 3;
+            List<Question> quesList = _dbContext.Question.Where(ques => ques.QuizNum == quizNum).ToList();
+            List<Answer> ansList = _dbContext.Answer.Where(ans => ans.QuizNum == quizNum).ToList();
+
+            QuestionAnswerViewModel quesAnsVM = new QuestionAnswerViewModel()
+            {
+                QuizNum = quizNum,
+                QuestionList = quesList,
+                AnswerList = ansList
+            };
+
+            return View(quesAnsVM);
         }
 
         public IActionResult Quiz4()
         {
-            return View();
+            int quizNum = 4;
+            List<Question> quesList = _dbContext.Question.Where(ques => ques.QuizNum == quizNum).ToList();
+            List<Answer> ansList = _dbContext.Answer.Where(ans => ans.QuizNum == quizNum).ToList();
+
+            QuestionAnswerViewModel quesAnsVM = new QuestionAnswerViewModel()
+            {
+                QuizNum = quizNum,
+                QuestionList = quesList,
+                AnswerList = ansList
+            };
+
+            return View(quesAnsVM);
         }
 
         public IActionResult Quiz5()

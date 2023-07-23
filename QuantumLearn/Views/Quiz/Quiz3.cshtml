@@ -1,8 +1,46 @@
-﻿
+﻿@model QuantumLearn.ViewModels.QuestionAnswerViewModel
+
 @{
-    ViewData["Title"] = "Lesson 3 Quiz";
+    int quizNum = Model.QuizNum;
+    ViewData["Title"] = $"Lesson {quizNum} Quiz";
 }
 
-<h3>Lesson 3 Quiz</h3>
-<p>Placeholder space for quiz</p>
-<a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Index">Back to Lessons</a>
+<div class="mainDiv">
+    <h3>Lesson @Model.QuizNum Quiz</h3><hr />
+
+    @if (Model != null)
+    {
+        <form asp-controller="Quiz" asp-action="SubmitQuiz" method="post">
+            @foreach (var ques in Model.QuestionList.Where(ques => ques.QuizNum == quizNum))
+            {
+                <p class="fw-bold m-0">@ques.Text</p>
+                @foreach (var ans in Model.AnswerList.Where(ans => ans.QuestionId == ques.Id))
+                {
+                    <input type="radio" id="@("ansID" + ans.Id)" name="@($"L{quizNum}Q{ques.Id}")" value="@ans.Id" required>
+                    <label for="@("ansID" + ans.Id)">@ans.Text</label>
+
+                    <br>
+                }
+                <br />
+            }
+
+            <input name="formQuizNum" type="hidden" value="@Model.QuestionList.First().QuizNum" />
+
+            <input class="btn btn-warning" type="submit" value="Submit Answers" />
+            <hr>
+            @{
+                int nextLessonNum = quizNum;
+                nextLessonNum++;
+                string nextLesson = $"Num{nextLessonNum}";
+            }
+            <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="@nextLesson">Next Lesson</a>
+            <br /><br />
+            <a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>
+        </form>
+    }
+    else
+    {
+        <p>An error has occurred. Please notify the site administrator.</p>
+    }
+    <br /><br />
+</div>
