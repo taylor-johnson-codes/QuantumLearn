@@ -1,0 +1,43 @@
+﻿@model QuantumLearn.ViewModels.QuestionAnswerViewModel
+@*the model brings in the quiz number and its list of questions and list of answers*@
+
+@{
+    int quizNum = Model.QuizNum;
+    ViewData["Title"] = $"Lesson {quizNum} Quiz";
+}
+
+<div class="mainDiv">
+    <h3>Lesson @Model.QuizNum Quiz</h3><hr />
+
+    @if (Model != null)
+    {
+        <form asp-controller="Quiz" asp-action="SubmitQuiz" method="post">
+            @foreach (var ques in Model.QuestionList.Where(ques => ques.QuizNum == quizNum))
+            {
+                <p class="fw-bold m-0">@ques.Text</p>
+                @foreach (var ans in Model.AnswerList.Where(ans => ans.QuestionId == ques.Id))
+                {
+                    <input type="radio" id="@("ansID" + ans.Id)" name="@($"L{quizNum}Q{ques.Id}")" value="@ans.Id" required>
+                    <label for="@("ansID" + ans.Id)">@ans.Text</label><br>
+                }
+                <br />
+            }
+
+            @* id="" and for="" go together so the user is able to click on either the radio circle or the answer text to select the answer *@
+            @* name="" and value="" both go the backend controller *@
+            @* name="" also groups the radio buttons together so the user can only select one answer for each question*@
+            @* "required" only needs to be in one of the group's answer inputs and it will apply to the whole group*@
+
+            @*hidden so the user can't see; sending which quiz this is for when submitting the form to the backend*@
+            <input name="formQuizNum" type="hidden" value="@Model.QuestionList.First().QuizNum" />
+
+            <input class="btn btn-warning" type="submit" value="Submit Answers" /><hr>
+            @await Html.PartialAsync("_PrevNextButtons", Model)
+        </form>
+    }
+    else
+    {
+        <p>An error has occurred. Please notify the site administrator.</p>
+    }
+    <br /><br />
+</div>
