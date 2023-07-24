@@ -121,15 +121,54 @@ namespace QuantumLearn.Configuration
                 // Quiz 7 Question 5
                 new Answer { Id = 74, QuizNum = 7, QuestionId = 31, Text = "The chances of finding a qubit in a particular state when we measure it", IsCorrect = true, OptionNum = 1 },
                 new Answer { Id = 75, QuizNum = 7, QuestionId = 31, Text = "Determining the state of the qubit before measurement", IsCorrect = false, OptionNum = 2 },
-                new Answer { Id = 76, QuizNum = 7, QuestionId = 31, Text = "Changing the state of a qubit after measurement", IsCorrect = false, OptionNum = 3 }
+                new Answer { Id = 76, QuizNum = 7, QuestionId = 31, Text = "Changing the state of a qubit after measurement", IsCorrect = false, OptionNum = 3 },
 
-                // Quiz 8 Question 
-                // Quiz 9 Question 
-                // Quiz 10 Question 
+                // Quiz 8 Question 1
+                new Answer { Id = 77, QuizNum = 8, QuestionId = 32, Text = "True", IsCorrect = true, OptionNum = 1 },
+                new Answer { Id = 78, QuizNum = 8, QuestionId = 32, Text = "False", IsCorrect = false, OptionNum = 2 },
+                // Quiz 8 Question 2
+                new Answer { Id = 79, QuizNum = 8, QuestionId = 33, Text = "True", IsCorrect = true, OptionNum = 1 },
+                new Answer { Id = 80, QuizNum = 8, QuestionId = 33, Text = "False", IsCorrect = false, OptionNum = 2 },
+                // Quiz 8 Question 3
+                new Answer { Id = 81, QuizNum = 8, QuestionId = 34, Text = "True", IsCorrect = false, OptionNum = 1 },
+                new Answer { Id = 82, QuizNum = 8, QuestionId = 34, Text = "False", IsCorrect = true, OptionNum = 2 },
+                // Quiz 8 Question 4
+                new Answer { Id = 83, QuizNum = 8, QuestionId = 35, Text = "The physical size of the qubit", IsCorrect = false, OptionNum = 1 },
+                new Answer { Id = 84, QuizNum = 8, QuestionId = 35, Text = "An extra piece of hidden information that affects how qubits interact", IsCorrect = true, OptionNum = 2 },
+                new Answer { Id = 85, QuizNum = 8, QuestionId = 35, Text = "The speed at which a qubit oscillates", IsCorrect = false, OptionNum = 3 },
+
+                // Quiz 9 Question 1
+                new Answer { Id = 86, QuizNum = 9, QuestionId = 36, Text = "True", IsCorrect = true, OptionNum = 1 },
+                new Answer { Id = 87, QuizNum = 9, QuestionId = 36, Text = "False", IsCorrect = false, OptionNum = 2 },
+                // Quiz 9 Question 2
+                new Answer { Id = 88, QuizNum = 9, QuestionId = 37, Text = "True", IsCorrect = false, OptionNum = 1 },
+                new Answer { Id = 89, QuizNum = 9, QuestionId = 37, Text = "False", IsCorrect = true, OptionNum = 2 },
+                // Quiz 9 Question 3
+                new Answer { Id = 90, QuizNum = 9, QuestionId = 38, Text = "Positive numbers", IsCorrect = false, OptionNum = 1 },
+                new Answer { Id = 91, QuizNum = 9, QuestionId = 38, Text = "Negative numbers", IsCorrect = false, OptionNum = 2 },
+                new Answer { Id = 92, QuizNum = 9, QuestionId = 38, Text = "Complex numbers", IsCorrect = true, OptionNum = 3 },
+
+                // Quiz 10 Question 1
+                new Answer { Id = 93, QuizNum = 10, QuestionId = 39, Text = "True", IsCorrect = true, OptionNum = 1 },
+                new Answer { Id = 94, QuizNum = 10, QuestionId = 39, Text = "False", IsCorrect = false, OptionNum = 2 },
+                // Quiz 10 Question 2
+                new Answer { Id = 95, QuizNum = 10, QuestionId = 40, Text = "True", IsCorrect = false, OptionNum = 1 },
+                new Answer { Id = 96, QuizNum = 10, QuestionId = 40, Text = "False", IsCorrect = true, OptionNum = 2 },
+                // Quiz 10 Question 3
+                new Answer { Id = 97, QuizNum = 10, QuestionId = 41, Text = "True", IsCorrect = false, OptionNum = 1 },
+                new Answer { Id = 98, QuizNum = 10, QuestionId = 41, Text = "False", IsCorrect = true, OptionNum = 2 },
+                // Quiz 10 Question 4
+                new Answer { Id = 99, QuizNum = 10, QuestionId = 42, Text = "True", IsCorrect = true, OptionNum = 1 },
+                new Answer { Id = 100, QuizNum = 10, QuestionId = 42, Text = "False", IsCorrect = false, OptionNum = 2 }
+
+                /*
                 // Quiz 11 Question 
+                new Answer { Id = , QuizNum = 11, QuestionId = , Text = "", IsCorrect = false, OptionNum =  },
                 // Quiz 12 Question 
+                new Answer { Id = , QuizNum = 12, QuestionId = , Text = "", IsCorrect = false, OptionNum =  },
                 // Quiz 13 Question 
-            );
+                new Answer { Id = , QuizNum = 13, QuestionId = , Text = "", IsCorrect = false, OptionNum =  },
+           */ );
         }
     }
 }

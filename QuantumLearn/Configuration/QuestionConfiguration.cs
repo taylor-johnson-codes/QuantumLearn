@@ -52,18 +52,26 @@ namespace QuantumLearn.Configuration
                 new Question { Id = 28, QuizNum = 7, Text = "Before a qubit is measured, it chooses to be in a definite state of either heads or tails." },
                 new Question { Id = 29, QuizNum = 7, Text = "When a qubit is not being measured, it is in a state of:" },
                 new Question { Id = 30, QuizNum = 7, Text = "The exact state of a qubit when we measure it:" },
-                new Question { Id = 31, QuizNum = 7, Text = "Probability in quantum computing is about:" }
+                new Question { Id = 31, QuizNum = 7, Text = "Probability in quantum computing is about:" },
 
-                /*
                 // Quiz 8
-                new Question { Id = , QuizNum = , Text = "" },
+                new Question { Id = 32, QuizNum = 8, Text = "Phase is a fundamental concept in quantum mechanics that refers to a difference in the stages of two wave cycles." },
+                new Question { Id = 33, QuizNum = 8, Text = "Phase can influence how a qubit behaves when it interacts with other qubits." },
+                new Question { Id = 34, QuizNum = 8, Text = "When you measure a qubit, you can observe its phase." },
+                new Question { Id = 35, QuizNum = 8, Text = "Which of the following best describes the phase of a qubit?" },
                 
                 // Quiz 9
-                new Question { Id = , QuizNum = , Text = "" },
+                new Question { Id = 36, QuizNum = 9, Text = "The amplitude of a qubit refers to the \"amount\" of each state present in the qubit's superposition." },
+                new Question { Id = 37, QuizNum = 9, Text = "The larger the amplitude of a state, the lower the probability you will measure the qubit in that state." },
+                new Question { Id = 38, QuizNum = 9, Text = "What kind of numbers are used to represent the \"amounts\" or amplitudes of the states in a qubit?" },
                 
                 // Quiz 10
-                new Question { Id = , QuizNum = , Text = "" },
+                new Question { Id = 39, QuizNum = 10, Text = "In classical computing, logic gates are the basic building blocks that perform operations on one or more bits of data." },
+                new Question { Id = 40, QuizNum = 10, Text = "The AND gate in classical computing gives an output of 1 if at least one of the inputs is 1." },
+                new Question { Id = 41, QuizNum = 10, Text = "The OR gate in classical computing gives an output of 1 only if both inputs are 1." },
+                new Question { Id = 42, QuizNum = 10, Text = "The NOT gate in classical computing takes one input and gives an output which is the opposite of the input." }
 
+                /*
                 // Quiz 11
                 new Question { Id = , QuizNum = , Text = "" },
 
