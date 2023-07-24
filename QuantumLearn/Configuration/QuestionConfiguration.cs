@@ -69,18 +69,30 @@ namespace QuantumLearn.Configuration
                 new Question { Id = 39, QuizNum = 10, Text = "In classical computing, logic gates are the basic building blocks that perform operations on one or more bits of data." },
                 new Question { Id = 40, QuizNum = 10, Text = "The AND gate in classical computing gives an output of 1 if at least one of the inputs is 1." },
                 new Question { Id = 41, QuizNum = 10, Text = "The OR gate in classical computing gives an output of 1 only if both inputs are 1." },
-                new Question { Id = 42, QuizNum = 10, Text = "The NOT gate in classical computing takes one input and gives an output which is the opposite of the input." }
+                new Question { Id = 42, QuizNum = 10, Text = "The NOT gate in classical computing takes one input and gives an output which is the opposite of the input." },
 
-                /*
                 // Quiz 11
-                new Question { Id = , QuizNum = , Text = "" },
+                new Question { Id = 43, QuizNum = 11, Text = "All types of quantum gates work on a single qubit only." },
+                new Question { Id = 44, QuizNum = 11, Text = "Quantum gates perform a type of operation called a \"unitary operation\" which preserves the probability of measuring different states." },
+                new Question { Id = 45, QuizNum = 11, Text = "Unlike classical gates, quantum gates cannot be reversed, which means once a gate operation is applied, you cannot go back to the original state." },
+                new Question { Id = 46, QuizNum = 11, Text = "How are quantum gates usually represented?" },
+                new Question { Id = 47, QuizNum = 11, Text = "What do you get when you arrange quantum gates in certain ways?" },
 
                 // Quiz 12
-                new Question { Id = , QuizNum = , Text = "" },
+                new Question { Id = 48, QuizNum = 12, Text = "The Pauli-X gate does not change the state of a qubit." },
+                new Question { Id = 49, QuizNum = 12, Text = "The Pauli-Y gate only performs a phase flip operation." },
+                new Question { Id = 50, QuizNum = 12, Text = "The Pauli-Z gate leaves the |0⟩ state unchanged." },
+                new Question { Id = 51, QuizNum = 12, Text = "The Hadamard gate turns a qubit into a superposition of states." },
+                new Question { Id = 52, QuizNum = 12, Text = "The CNOT gate operates on two qubits and is essential for creating quantum entanglement between two qubits." },
+                new Question { Id = 53, QuizNum = 12, Text = "The Toffoli (CCNOT) gate operates on two qubits." },
 
                 // Quiz 13
-                new Question { Id = , QuizNum = , Text = "" },
-                */
+                new Question { Id = 54, QuizNum = 13, Text = "Quantum algorithms are designed to use principles of quantum mechanics to solve problems more efficiently than classical algorithms." },
+                new Question { Id = 55, QuizNum = 13, Text = "Quantum algorithms are different from classical algorithms because they perform computations on all possible states simultaneously." },
+                new Question { Id = 56, QuizNum = 13, Text = "Shor's Algorithm has significant implications for cryptography because it can factor large numbers exponentially faster than classical algorithms." },
+                new Question { Id = 57, QuizNum = 13, Text = "Grover's Algorithm is best suited to search an unsorted database." },
+                new Question { Id = 58, QuizNum = 13, Text = "The first quantum algorithm that performs better than the best classical algorithm was Grover's Algorithm." },
+                new Question { Id = 59, QuizNum = 13, Text = "Bernstein-Vazirani Algorithm needs several steps proportional to the number of bits in the secret number to find it." }
             );
         }
     }

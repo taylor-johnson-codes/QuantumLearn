@@ -159,16 +159,64 @@ namespace QuantumLearn.Configuration
                 new Answer { Id = 98, QuizNum = 10, QuestionId = 41, Text = "False", IsCorrect = true, OptionNum = 2 },
                 // Quiz 10 Question 4
                 new Answer { Id = 99, QuizNum = 10, QuestionId = 42, Text = "True", IsCorrect = true, OptionNum = 1 },
-                new Answer { Id = 100, QuizNum = 10, QuestionId = 42, Text = "False", IsCorrect = false, OptionNum = 2 }
+                new Answer { Id = 100, QuizNum = 10, QuestionId = 42, Text = "False", IsCorrect = false, OptionNum = 2 },
 
-                /*
-                // Quiz 11 Question 
-                new Answer { Id = , QuizNum = 11, QuestionId = , Text = "", IsCorrect = false, OptionNum =  },
-                // Quiz 12 Question 
-                new Answer { Id = , QuizNum = 12, QuestionId = , Text = "", IsCorrect = false, OptionNum =  },
-                // Quiz 13 Question 
-                new Answer { Id = , QuizNum = 13, QuestionId = , Text = "", IsCorrect = false, OptionNum =  },
-           */ );
+                // Quiz 11 Question 1
+                new Answer { Id = 101, QuizNum = 11, QuestionId = 43, Text = "True", IsCorrect = false, OptionNum = 1 },
+                new Answer { Id = 102, QuizNum = 11, QuestionId = 43, Text = "False", IsCorrect = true, OptionNum = 2 },
+                // Quiz 11 Question 2
+                new Answer { Id = 103, QuizNum = 11, QuestionId = 44, Text = "True", IsCorrect = true, OptionNum = 1 },
+                new Answer { Id = 104, QuizNum = 11, QuestionId = 44, Text = "False", IsCorrect = false, OptionNum = 2 },
+                // Quiz 11 Question 3
+                new Answer { Id = 105, QuizNum = 11, QuestionId = 45, Text = "True", IsCorrect = false, OptionNum = 1 },
+                new Answer { Id = 106, QuizNum = 11, QuestionId = 45, Text = "False", IsCorrect = true, OptionNum = 2 },
+                // Quiz 11 Question 4
+                new Answer { Id = 107, QuizNum = 11, QuestionId = 46, Text = "As equations", IsCorrect = false, OptionNum = 1 },
+                new Answer { Id = 108, QuizNum = 11, QuestionId = 46, Text = "As matrices", IsCorrect = true, OptionNum = 2 },
+                new Answer { Id = 109, QuizNum = 11, QuestionId = 46, Text = "As algorithms", IsCorrect = false, OptionNum = 3 },
+                // Quiz 11 Question 5
+                new Answer { Id = 110, QuizNum = 11, QuestionId = 47, Text = "Quantum paths", IsCorrect = false, OptionNum = 1 },
+                new Answer { Id = 111, QuizNum = 11, QuestionId = 47, Text = "Quantum sequences", IsCorrect = false, OptionNum = 2 },
+                new Answer { Id = 112, QuizNum = 11, QuestionId = 47, Text = "Quantum circuits", IsCorrect = true, OptionNum = 3 },
+
+                // Quiz 12 Question 1
+                new Answer { Id = 113, QuizNum = 12, QuestionId = 48, Text = "True", IsCorrect = false, OptionNum = 1 },
+                new Answer { Id = 114, QuizNum = 12, QuestionId = 48, Text = "False", IsCorrect = true, OptionNum = 2 },
+                // Quiz 12 Question 2
+                new Answer { Id = 115, QuizNum = 12, QuestionId = 49, Text = "True", IsCorrect = false, OptionNum = 1 },
+                new Answer { Id = 116, QuizNum = 12, QuestionId = 49, Text = "False", IsCorrect = true, OptionNum = 2 },
+                // Quiz 12 Question 3
+                new Answer { Id = 117, QuizNum = 12, QuestionId = 50, Text = "True", IsCorrect = true, OptionNum = 1 },
+                new Answer { Id = 118, QuizNum = 12, QuestionId = 50, Text = "False", IsCorrect = false, OptionNum = 2 },
+                // Quiz 12 Question 4
+                new Answer { Id = 119, QuizNum = 12, QuestionId = 51, Text = "True", IsCorrect = true, OptionNum = 1 },
+                new Answer { Id = 120, QuizNum = 12, QuestionId = 51, Text = "False", IsCorrect = false, OptionNum = 2 },
+                // Quiz 12 Question 5
+                new Answer { Id = 121, QuizNum = 12, QuestionId = 52, Text = "True", IsCorrect = true, OptionNum = 1 },
+                new Answer { Id = 122, QuizNum = 12, QuestionId = 52, Text = "False", IsCorrect = false, OptionNum = 2 },
+                // Quiz 12 Question 6
+                new Answer { Id = 123, QuizNum = 12, QuestionId = 53, Text = "True", IsCorrect = false, OptionNum = 1 },
+                new Answer { Id = 124, QuizNum = 12, QuestionId = 53, Text = "False", IsCorrect = true, OptionNum = 2 },
+
+                // Quiz 13 Question 1
+                new Answer { Id = 125, QuizNum = 13, QuestionId = 54, Text = "True", IsCorrect = true, OptionNum = 1 },
+                new Answer { Id = 126, QuizNum = 13, QuestionId = 54, Text = "False", IsCorrect = false, OptionNum = 2 },
+                // Quiz 13 Question 2
+                new Answer { Id = 127, QuizNum = 13, QuestionId = 55, Text = "True", IsCorrect = true, OptionNum = 1 },
+                new Answer { Id = 128, QuizNum = 13, QuestionId = 55, Text = "False", IsCorrect = false, OptionNum = 2 },
+                // Quiz 13 Question 3
+                new Answer { Id = 129, QuizNum = 13, QuestionId = 56, Text = "True", IsCorrect = true, OptionNum = 1 },
+                new Answer { Id = 130, QuizNum = 13, QuestionId = 56, Text = "False", IsCorrect = false, OptionNum = 2 },
+                // Quiz 13 Question 4
+                new Answer { Id = 131, QuizNum = 13, QuestionId = 57, Text = "True", IsCorrect = true, OptionNum = 1 },
+                new Answer { Id = 132, QuizNum = 13, QuestionId = 57, Text = "False", IsCorrect = false, OptionNum = 2 },
+                // Quiz 13 Question 5
+                new Answer { Id = 133, QuizNum = 13, QuestionId = 58, Text = "True", IsCorrect = false, OptionNum = 1 },
+                new Answer { Id = 134, QuizNum = 13, QuestionId = 58, Text = "False", IsCorrect = true, OptionNum = 2 },
+                // Quiz 13 Question 6
+                new Answer { Id = 135, QuizNum = 13, QuestionId = 59, Text = "True", IsCorrect = false, OptionNum = 1 },
+                new Answer { Id = 136, QuizNum = 13, QuestionId = 59, Text = "False", IsCorrect = true, OptionNum = 2 }
+            );
         }
     }
 }
