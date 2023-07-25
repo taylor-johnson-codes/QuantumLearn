@@ -32,12 +32,11 @@
             <input name="formQuizNum" type="hidden" value="@Model.QuestionList.First().QuizNum" />
 
             <input class="btn btn-warning" type="submit" value="Submit Answers" /><hr>
-            @await Html.PartialAsync("_PrevNextButtons", Model)
+            @await Html.PartialAsync("_BackToLessNextLessButtons", Model)
         </form>
     }
     else
     {
         <p>An error has occurred. Please notify the site administrator.</p>
     }
-    <br /><br />
 </div>
