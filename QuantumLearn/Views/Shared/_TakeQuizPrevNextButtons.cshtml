@@ -25,6 +25,10 @@
         {
             <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="@nextLesson">Next Lesson</a><br /><br />
         }
+        if (Model == 13)
+        {
+            <br /><br />
+        }
     }
     <a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>
 </div>
