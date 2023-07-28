@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using QuantumLearn.ViewModels;
 
 namespace QuantumLearn.Controllers
 {
@@ -12,133 +11,81 @@ namespace QuantumLearn.Controllers
 
         public IActionResult Num1()
         {
-            // Info to send to view via the ViewModel
-            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
-            {
-                QuizNum = 1
-            };
-
-            return View(lessonNumVM);
+            // Info to send to view
+            int lessonNum = 1;
+            return View(lessonNum);
         }
 
         public IActionResult Num2()
         {
-            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
-            {
-                QuizNum = 2
-            };
-
-            return View(lessonNumVM);
+            int lessonNum = 2;
+            return View(lessonNum);
         }
 
         public IActionResult Num3()
         {
-            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
-            {
-                QuizNum = 3
-            };
-
-            return View(lessonNumVM);
+            int lessonNum = 3;
+            return View(lessonNum);
         }
 
         public IActionResult Num4()
         {
-            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
-            {
-                QuizNum = 4
-            };
-
-            return View(lessonNumVM);
+            int lessonNum = 4;
+            return View(lessonNum);
         }
 
         public IActionResult Num5()
         {
-            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
-            {
-                QuizNum = 5
-            };
-
-            return View(lessonNumVM);
+            int lessonNum = 5;
+            return View(lessonNum);
         }
 
         public IActionResult Num6()
         {
-            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
-            {
-                QuizNum = 6
-            };
-
-            return View(lessonNumVM);
+            int lessonNum = 6;
+            return View(lessonNum);
         }
 
         public IActionResult Num7()
         {
-            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
-            {
-                QuizNum = 7
-            };
-
-            return View(lessonNumVM);
+            int lessonNum = 7;
+            return View(lessonNum);
         }
 
         public IActionResult Num8()
         {
-            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
-            {
-                QuizNum = 8
-            };
-
-            return View(lessonNumVM);
+            int lessonNum = 8;
+            return View(lessonNum);
         }
 
         public IActionResult Num9()
         {
-            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
-            {
-                QuizNum = 9
-            };
-
-            return View(lessonNumVM);
+            int lessonNum = 9;
+            return View(lessonNum);
         }
 
         public IActionResult Num10()
         {
-            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
-            {
-                QuizNum = 10
-            };
-
-            return View(lessonNumVM);
+            int lessonNum = 10;
+            return View(lessonNum);
         }
 
         public IActionResult Num11()
         {
-            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
-            {
-                QuizNum = 11
-            };
-
-            return View(lessonNumVM);
+            int lessonNum = 11;
+            return View(lessonNum);
         }
 
         public IActionResult Num12()
         {
-            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
-            {
-                QuizNum = 12
-            };
-
-            return View(lessonNumVM);
+            int lessonNum = 12;
+            return View(lessonNum);
         }
 
         public IActionResult Num13()
         {
-            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
-            {
-                QuizNum = 13
-            };
-
-            return View(lessonNumVM);
+            int lessonNum = 13;
+            return View(lessonNum);
         }
     }
 }
