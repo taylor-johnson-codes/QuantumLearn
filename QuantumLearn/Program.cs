@@ -13,7 +13,7 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages();  // needed for Identity
 
 var app = builder.Build();
 
@@ -38,6 +38,6 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.MapRazorPages();  // needed for Identity to work
+app.MapRazorPages();  // needed for Identity
 
 app.Run();
