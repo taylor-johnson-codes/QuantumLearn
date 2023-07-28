@@ -1,9 +1,10 @@
-﻿
+﻿@model int
+
 @{
-    ViewData["Title"] = "Lesson 3";
+    ViewData["Title"] = $"Lesson {Model}";
 }
 
-<h3>Lesson 3:</h3>
+<h3>Lesson @Model</h3>
 <h1>The Importance of Learning Quantum Computing</h1>
 <br />
 
@@ -33,13 +34,4 @@
     </p>
 </div>
 
-<div class="text-center">
-    <br />
-    <a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz3">Take Quiz</a>
-    <br /><br />
-    <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num2">Previous Lesson</a>
-    <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="Num4">Next Lesson</a>
-    <br /><br />
-    <a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>
-    <br />
-</div>
+@await Html.PartialAsync("_TakeQuizPrevNextButtons", Model)
