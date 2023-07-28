@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using QuantumLearn.ViewModels;
 
 namespace QuantumLearn.Controllers
 {
@@ -11,67 +12,133 @@ namespace QuantumLearn.Controllers
 
         public IActionResult Num1()
         {
-            return View();
+            // Info to send to view via the ViewModel
+            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
+            {
+                QuizNum = 1
+            };
+
+            return View(lessonNumVM);
         }
 
         public IActionResult Num2()
         {
-            return View();
+            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
+            {
+                QuizNum = 2
+            };
+
+            return View(lessonNumVM);
         }
 
         public IActionResult Num3()
         {
-            return View();
+            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
+            {
+                QuizNum = 3
+            };
+
+            return View(lessonNumVM);
         }
 
         public IActionResult Num4()
         {
-            return View();
+            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
+            {
+                QuizNum = 4
+            };
+
+            return View(lessonNumVM);
         }
 
         public IActionResult Num5()
         {
-            return View();
+            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
+            {
+                QuizNum = 5
+            };
+
+            return View(lessonNumVM);
         }
 
         public IActionResult Num6()
         {
-            return View();
+            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
+            {
+                QuizNum = 6
+            };
+
+            return View(lessonNumVM);
         }
 
         public IActionResult Num7()
         {
-            return View();
+            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
+            {
+                QuizNum = 7
+            };
+
+            return View(lessonNumVM);
         }
 
         public IActionResult Num8()
         {
-            return View();
+            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
+            {
+                QuizNum = 8
+            };
+
+            return View(lessonNumVM);
         }
 
         public IActionResult Num9()
         {
-            return View();
+            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
+            {
+                QuizNum = 9
+            };
+
+            return View(lessonNumVM);
         }
 
         public IActionResult Num10()
         {
-            return View();
+            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
+            {
+                QuizNum = 10
+            };
+
+            return View(lessonNumVM);
         }
 
         public IActionResult Num11()
         {
-            return View();
+            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
+            {
+                QuizNum = 11
+            };
+
+            return View(lessonNumVM);
         }
 
         public IActionResult Num12()
         {
-            return View();
+            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
+            {
+                QuizNum = 12
+            };
+
+            return View(lessonNumVM);
         }
 
         public IActionResult Num13()
         {
-            return View();
+            LessonNumViewModel lessonNumVM = new LessonNumViewModel()
+            {
+                QuizNum = 13
+            };
+
+            return View(lessonNumVM);
         }
     }
 }
