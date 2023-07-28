@@ -1,0 +1,30 @@
+﻿@model int
+
+@{
+    // Take Quiz, Previous Lesson, Next Lesson, and Lessons Homepage buttons
+    int currentLessonNum = Model;
+    string quizNumString = $"Quiz{currentLessonNum}";
+    int prevLessonNum = currentLessonNum;
+    --prevLessonNum;
+    string prevLesson = $"Num{prevLessonNum}";
+    int nextLessonNum = currentLessonNum;
+    nextLessonNum++;
+    string nextLesson = $"Num{nextLessonNum}";
+}
+
+<div class="text-center">
+    <br />
+    <a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="@quizNumString">Take Quiz</a>
+    <br /><br />
+    @{
+        if (Model != 1)
+        {
+            <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="@prevLesson">Previous Lesson</a>
+        }
+        if (Model != 13)
+        {
+            <a type="button" class="btn btn-success" asp-controller="Lesson" asp-action="@nextLesson">Next Lesson</a><br /><br />
+        }
+    }
+    <a type="button" class="btn btn-primary" asp-controller="Lesson" asp-action="Index">Lessons Homepage</a>
+</div>
