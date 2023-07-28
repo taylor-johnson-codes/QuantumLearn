@@ -8,11 +8,11 @@
     int quizNum = Model.QuizNum;
     int userCorrectNum = 0;
     int totalQuesNum = Model.QuestionList.Count;
-    ViewData["Title"] = $"Quiz {quizNum} Results";
+    ViewData["Title"] = $"Lesson {quizNum} Quiz Results";
 }
 
 <div class="mainDiv">
-    <h3>Quiz @resultsList.First().QuizNum Results</h3><hr />
+    <h3>Lesson @quizNum Quiz Results</h3><hr />
     @foreach (var result in resultsList)
     {
         @*for the question*@
