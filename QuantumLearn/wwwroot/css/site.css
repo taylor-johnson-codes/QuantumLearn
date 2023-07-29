@@ -24,34 +24,33 @@ body {
 #welcomeTitle {
     font-family: 'Montserrat', sans-serif;
     color: #333;
-    font-size: 3em; /* adjust as needed */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, .5); /* adjust as needed */
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
 }
 
 #subTitle {
     font-family: 'Montserrat', sans-serif;
     color: #333;
     font-size: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, .5); /* adjust as needed */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
 }
 
 #mainPageContent {
     font-family: 'Roboto', serif;
 }
 
-#mainDiv1 {
+.mainDivs {
     background-color: #c6e2f2;
     border-radius: 20px;
     padding-top: 15px;
-    /*margin-right: 1px;*/
 }
 
 #mainDiv1Content {
     font-family: 'Changa', serif;
 }
 
-#mainDiv2 {
-    background-color: #c6e2f2;
+#quantCompImg {
+    width: 100%;
+    height: auto;
     border-radius: 20px;
-    padding-top: 45px;
 }

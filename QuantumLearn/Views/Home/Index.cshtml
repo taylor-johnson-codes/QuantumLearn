@@ -8,7 +8,7 @@
     <br />
 
     <div class="row g-5 justify-content-center" id="mainPageContent">
-        <div class="col-lg-5 me-lg-3" id="mainDiv1">
+        <div class="col-lg-4 me-lg-1 mainDivs">
             <h5 class ="text-capitalize fs-4 fw-bold">Why learn about quantum computing?</h5>
             <div id="mainDiv1Content">
                 <p class="fs-5">The emergence of quantum computing has marked a paradigm shift in the field of information technology, promising significant leaps in computational power and efficiency. </p>
@@ -16,16 +16,19 @@
                 <p class="fs-5">QuantumLearn is made for you to quickly learn the foundational topics needed to jump start your path in quantum computing.</p>
             </div>
         </div>
-        <div class="col-lg-5" id="mainDiv2">
-            @*<div class="col-lg-6" id="mainDiv2">*@
+        <div class="col-lg-3">
+            <img id="quantCompImg" src="~/images/quantCompImg.jpg" />
+            <p class="fst-italic">IBM's System Q Quantum Computer</p>
+        </div>
+        <div class="col-lg-4 ms-lg-1 mainDivs">
             <h5 class="text-capitalize fs-4 fw-bold">Start now without an account</h5>
             <p class="fs-5">QuantumLearn is free to use without an account, but keep in mind that without an account, you won't be able to save your progress..</p>
-            <a type="button" class="btn btn-success rounded-pill" asp-controller="Lesson" asp-action="Index">Start Lessons Now</a><br />
+            <a type="button" class="btn btn-success rounded-pill" asp-controller="Lesson" asp-action="Index">Start Lessons Now</a><br /><br />
             <hr />
             <h5 class="text-capitalize fs-4 fw-bold">Create an account / login</h5>
             <p class="fs-5">Accounts are always free and your learning progress will be saved when you are logged in to your account.</p>
-            <a type="button" class="btn btn-primary rounded-pill" asp-controller="" asp-action="">Register</a>  @*add route*@
-            <a type="button" class="btn btn-primary rounded-pill" asp-controller="" asp-action="">Login</a>  @*add route*@
+            <a type="button" class="btn btn-primary rounded-pill" asp-area="Identity" asp-page="/Account/Register">Register</a> <br /><br />
+            <a type="button" class="btn btn-primary rounded-pill" asp-area="Identity" asp-page="/Account/Login">Login</a>
         </div>
     </div>
 </div>
