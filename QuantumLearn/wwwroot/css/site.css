@@ -21,6 +21,7 @@ body {
     background-position: center;
 }
 
+/* Home Page */
 #welcomeTitle {
     font-family: 'Montserrat', sans-serif;
     color: #333;
@@ -53,4 +54,28 @@ body {
     width: 100%;
     height: auto;
     border-radius: 20px;
+}
+
+/* Lessons Main Page */
+#lessonsTitle {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
+}
+
+#tableHeader {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    font-size: large;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
+}
+
+#tableBody {
+    font-family: 'Roboto', serif;
+    font-size: large;
+}
+
+.lessonName {
+    font-weight: bolder;
 }
