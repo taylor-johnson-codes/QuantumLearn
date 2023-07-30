@@ -89,7 +89,6 @@ body {
 }
 
 /* Individual Lesson & Quiz Pages */
-
 .lessQuizNum {
     font-family: 'Montserrat', sans-serif;
 }
@@ -97,6 +96,10 @@ body {
 .lessName {
     font-family: 'Montserrat', sans-serif;
     color: #333;
-    /*font-size: large;*/
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
+}
+
+.disguisedLink {
+    color: black;
+    text-decoration: solid;
 }
