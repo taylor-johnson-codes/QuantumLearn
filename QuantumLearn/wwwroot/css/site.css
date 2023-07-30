@@ -103,3 +103,8 @@ body {
     color: black;
     text-decoration: solid;
 }
+
+/* Lesson 10 Page */
+.rowLess10 {
+    height: 200px;
+}
