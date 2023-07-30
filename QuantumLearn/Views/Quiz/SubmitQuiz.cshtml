@@ -12,7 +12,7 @@
 }
 
 <div class="mainDiv">
-    <h3>Lesson @quizNum Quiz Results</h3><hr />
+    <h3 class="lessQuizNum">Lesson @quizNum Quiz Results</h3><hr />
     @foreach (var result in resultsList)
     {
         @*for the question*@
@@ -47,6 +47,6 @@
         }
     }
 
-    <h3 class="text-primary">You answered @userCorrectNum out of @totalQuesNum questions correctly.</h3><hr>
+    <h3 class="text-primary lessQuizNum">You answered @userCorrectNum out of @totalQuesNum questions correctly.</h3><hr>
     @await Html.PartialAsync("_RetakeQuizAndMoreButtons", Model)
 </div>

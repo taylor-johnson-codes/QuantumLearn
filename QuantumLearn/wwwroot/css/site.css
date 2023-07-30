@@ -75,7 +75,6 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: medium;
     font-weight: bold;
-    font-size: medium;
 }
 
 .lessonPic {
@@ -87,4 +86,17 @@ body {
 
 .card {
     background-color: #c6e2f2;
+}
+
+/* Individual Lesson & Quiz Pages */
+
+.lessQuizNum {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.lessName {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    /*font-size: large;*/
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
 }
