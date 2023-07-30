@@ -4,26 +4,49 @@
     ViewData["Title"] = $"Lesson {Model}";
 }
 
-<h3 class="lessQuizNum">Lesson @Model</h3>
-<h1 class="lessName">Qubits, Superposition & Entanglement</h1>
-<br />
+<div class="container lessQuizNum col-10">
+    <h3 class="lessQuizNum">Lesson @Model</h3>
+    <h1 class="lessName">Qubits, Superposition & Entanglement</h1><br />
 
-<div class="container border border-dark">
-    <p>
-        Let's start with bits. In classical computers, bits are the smallest unit of information. A bit can be in one of two states: 0 or 1. Every piece of data (like a document, picture, or music file) you've ever used on a computer is made up of billions of these bits.
-        <br /><br />
-        Now, onto qubits. The term "qubit" comes from "quantum bit". Qubits are the quantum version of classical bits. What makes them different, and in many ways more powerful, is that they can be in a state of 0, 1, or both at the same time due to a property in quantum mechanics known as superposition.
-        <br /><br />
-        Think of a coin. When it's on a table, it's either heads (which we can liken to 0) or tails (1). But if you flip it in the air, until it lands, it's in a state where it's not really heads or tails - it's both at once. That's a bit like what superposition means for a qubit: it can be in multiple states at once until you measure it, at which point it "chooses" one of those states.
-        <br /><br />
-        Another example: This is kind of like saying you're both at home and at the store at the same time, until someone checks and "collapses" you into one place or another. In the quantum world, we can't know the exact state of a qubit until we measure it. Once we measure a qubit, it "collapses" to being either a 0 or 1.
-        <br /><br />
-        Another important property of qubits is entanglement. When qubits become entangled, the state of one qubit is directly related to the state of another, no matter how far apart they are. This is like if you had two coins and, no matter how far apart they were, every time one landed as heads, the other also landed as heads. This property allows quantum computers to process a massive amount of information simultaneously.
-        <br /><br />
-        Another example: This is like saying that two light switches are connected in such a way that flipping one will instantaneously flip the other, no matter how far apart they are. If two qubits become entangled, the state of one qubit will instantly correlate with the state of the other when measured, regardless of the distance between them.
-        <br /><br />
-        These special properties of qubits—superposition and entanglement—enable quantum computers to process a massive number of possibilities at once, making them incredibly powerful for certain types of calculations.
-    </p>
+    <div class="row">
+        <div class="col-9 fs-5">
+            Let's start with bits. In classical computers, bits are the smallest unit of information. A bit can be in one of two states: 0 or 1. Every piece of data (like a document, picture, or music file) you've ever used on a computer is made up of billions of these bits.
+            <br /><br />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-9 fs-5">
+            <h5 class="fw-bold opacity-75">Qubits</h5>
+            Now, onto qubits. The term "qubit" comes from "quantum bit". Qubits are the quantum version of classical bits. What makes them different, and in many ways more powerful, is that they can be in a state of 0, 1, or both at the same time due to a property in quantum mechanics known as superposition.
+            <br /><br />
+            <h5 class="fw-bold opacity-75">Superposition</h5>
+            Think of a coin. When it's on a table, it's either heads (which we can liken to 0) or tails (1). But if you flip it in the air, until it lands, it's in a state where it's not really heads or tails - it's both at once. That's a bit like what superposition means for a qubit: it can be in multiple states at once until you measure it, at which point it "chooses" one of those states.
+            <br /><br />
+            Another example: Superposition is kind of like saying you're both at home and at the store at the same time, until someone checks and "collapses" you into one place or another. In the quantum world, we can't know the exact state of a qubit until we measure it. Once we measure a qubit, it "collapses" to being either a 0 or 1.
+            <br /><br />
+        </div>
+        <div class="col-3">
+            <img class="w-100 h-50 mt-5 rounded-3 border border-dark border-3" src="~/images/less2_Superpos.jpg" />
+            <p class="text-center fst-italic">Superposition</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-9 fs-5">
+            <h5 class="fw-bold opacity-75">Entanglement</h5>
+            Another important property of qubits is entanglement. When qubits become entangled, the state of one qubit is directly related to the state of another, no matter how far apart they are. This is like if you had two coins and, no matter how far apart they were, every time one landed as heads, the other also landed as heads. This property allows quantum computers to process a massive amount of information simultaneously.
+            <br /><br />
+            Another example: Entanglement is like saying that two light switches are connected in such a way that flipping one will instantaneously flip the other, no matter how far apart they are. If two qubits become entangled, the state of one qubit will instantly correlate with the state of the other when measured, regardless of the distance between them.
+            <br /><hr />
+            These special properties of qubits—superposition and entanglement—enable quantum computers to process a massive number of possibilities at once, making them incredibly powerful for certain types of calculations.
+            <br /><br />
+        </div>
+        <div class="col-3">
+            <img class="w-100 h-50 mt-5 rounded-3 border border-dark border-3" src="~/images/less2_EntangQubits.jpg" />
+            <p class="text-center fst-italic">Entangled Qubits</p>
+        </div>
+    </div>
+
+    @await Html.PartialAsync("_TakeQuizPrevNextButtons", Model)
 </div>
-
-@await Html.PartialAsync("_TakeQuizPrevNextButtons", Model)
