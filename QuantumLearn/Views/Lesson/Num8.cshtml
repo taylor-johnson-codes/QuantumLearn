@@ -4,24 +4,36 @@
     ViewData["Title"] = $"Lesson {Model}";
 }
 
-<h3 class="lessQuizNum">Lesson @Model</h3>
-<h1 class="lessName">Qubit Phase</h1>
-<br />
+<div class="container lessQuizNum col-10">
+    <h3 class="lessQuizNum">Lesson @Model</h3>
+    <h1 class="lessName">Qubit Phase</h1><br />
 
-<div class="container border border-dark">
-    <p>
-        To explain phase in simple terms, let's continue using the magical coin analogy for qubits.
-        <br /><br />
-        So far, we know our magical coin can be in a superposition of states—both heads (|1⟩) and tails (|0⟩) at the same time, and when we look at it (measure it), it collapses to either heads or tails. But there's another unique property our magical coin has: "phase".
-        <br /><br />
-        Think of phase as the color of our coin. Let's say our magical coin can change colors between blue and red. This color doesn't change the fact that it's still a coin and can be heads or tails, but it adds extra information about the state of our coin.
-        <br /><br />
-        In the quantum world, this "color" (phase) is important because it can influence how our magical coin behaves when it interacts with other magical coins (qubits). When we do computations in a quantum computer, these interactions matter a lot.
-        <br /><br />
-        But here's the catch: if you look at the coin (measure it), you'll only see if it shows heads or tails, but not its color (phase). The color (phase) kind of disappears when you measure it, but until you do, it can have important effects.
-        <br /><br />
-        In more technical terms, phase refers to a difference in the stages of two wave cycles, which is a fundamental concept in quantum mechanics. But for the sake of simplicity, understanding it as an extra piece of hidden information (like color) that affects how qubits interact is a good start.
-    </p>
+    <div class="row">
+        <div class="col-8 fs-5">
+            To explain phase in simple terms, let's continue using the magical coin analogy for qubits.
+            <br /><br />
+            So far, we know our magical coin can be in a superposition of states—both heads (|1⟩) and tails (|0⟩) at the same time, and when we look at it (measure it), it collapses to either heads or tails. But there's another unique property our magical coin has: "phase".
+            <br /><br />
+            Think of phase as the color of our coin. Let's say our magical coin can change colors between blue and red. This color doesn't change the fact that it's still a coin and can be heads or tails, but it adds extra information about the state of our coin.
+            <br /><br />
+        </div>
+        <div class="col-4">
+            <img class="w-100 h-50 mt-5 rounded-3 border border-dark border-3" src="~/images/less8_ColorQubit.jpg" />
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-8 fs-5">
+            In the quantum world, this "color" (phase) is important because it can influence how our magical coin behaves when it interacts with other magical coins (qubits). When we do computations in a quantum computer, these interactions matter a lot.
+            <br /><br />
+            But here's the catch: if you look at the coin (measure it), you'll only see if it shows heads or tails, but not its color (phase). The color (phase) kind of disappears when you measure it, but until you do, it can have important effects.
+            <br /><br />
+            In more technical terms, phase refers to a difference in the stages of two wave cycles, which is a fundamental concept in quantum mechanics. But for the sake of simplicity, understanding it as an extra piece of hidden information (like color) that affects how qubits interact is a good start.
+        </div>
+        <div class="col-4">
+            <img class="w-100 h-50 rounded-3 border border-dark border-3" src="~/images/less8_PhaseDiff.jpg" />
+        </div>
+    </div>
+
+    @await Html.PartialAsync("_TakeQuizPrevNextButtons", Model)
 </div>
-
-@await Html.PartialAsync("_TakeQuizPrevNextButtons", Model)
