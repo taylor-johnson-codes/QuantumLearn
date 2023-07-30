@@ -4,22 +4,39 @@
     ViewData["Title"] = $"Lesson {Model}";
 }
 
-<h3 class="lessQuizNum">Lesson @Model</h3>
-<h1 class="lessName">Imaginary Unit</h1>
-<br />
+<div class="container lessQuizNum col-10">
+    <h3 class="lessQuizNum">Lesson @Model</h3>
+    <h1 class="lessName">Imaginary Unit</h1><br />
 
-<div class="container border border-dark">
-    <p>
-        The imaginary unit, often denoted as "i", is a mathematical concept that's used broadly in many areas of physics and engineering, including quantum computing.
-        <br /><br />
-        The imaginary unit is defined as the square root of -1. In other words, i^2 = -1.
-        <br /><br />
-        While it might seem strange to consider the square root of a negative number (since no real number multiplied by itself gives a negative result), the concept of imaginary numbers becomes necessary and extremely useful in many areas of science and engineering. When combined with real numbers, we get what are known as complex numbers, which have both a real part and an imaginary part.
-        <br /><br />
-        In quantum computing, complex numbers and the imaginary unit are essential because they are used to describe the state of qubits. Qubits, unlike classical bits, can exist in a superposition of states, and the coefficients of these states are complex numbers. This use of complex numbers is one of the features that gives quantum computers their unique capabilities.
-        <br /><br />
-        Quantum gates, which perform operations on qubits, are also described using matrices that often involve complex numbers. This makes the imaginary unit an integral part of the mathematics of quantum computing.
-    </p>
+    <div class="row">
+        <div class="col-3">
+            <img class="w-100 h-50 rounded-3 border border-dark border-3" src="~/images/less5_i.jpg" />
+        </div>
+        <div class="col-8 fs-5">
+            The imaginary unit, often denoted as "i", is a mathematical concept that's used broadly in many areas of physics and engineering, including quantum computing.
+            <br /><br />
+            The imaginary unit is defined as the Square Root of Negative One:<br />
+            i = &radic; -1<br />
+            In other words, the imaginary unit Squared:<br />
+            i&sup2; = -1
+            <br /><br />
+            While it might seem strange to consider the square root of a negative number (since no real number multiplied by itself gives a negative result), the concept of imaginary numbers becomes necessary and extremely useful in many areas of science and engineering.<br /><br />
+            <h5 class="fw-bold opacity-75">Complex Numbers</h5>
+            When combined with real numbers, we get what are known as complex numbers, which have both a real part and an imaginary part.
+            <br /><br />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <img class="w-100 h-50 p-1 rounded-3 border border-dark border-3" src="~/images/less5_i's.jpg" />
+        </div>
+        <div class="col-8 fs-5">
+            In quantum computing, complex numbers and the imaginary unit are essential because they are used to describe the state of qubits. Qubits, unlike classical bits, can exist in a superposition of states, and the coefficients of these states are complex numbers. This use of complex numbers is one of the features that gives quantum computers their unique capabilities.
+            <br /><br />
+            Quantum gates, which perform operations on qubits, are also described using matrices that often involve complex numbers. This makes the imaginary unit an integral part of the mathematics of quantum computing.
+        </div>
+    </div>
+            
+    @await Html.PartialAsync("_TakeQuizPrevNextButtons", Model)
 </div>
-
-@await Html.PartialAsync("_TakeQuizPrevNextButtons", Model)
