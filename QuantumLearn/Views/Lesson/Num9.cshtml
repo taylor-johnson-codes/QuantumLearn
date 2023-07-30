@@ -4,22 +4,36 @@
     ViewData["Title"] = $"Lesson {Model}";
 }
 
-<h3 class="lessQuizNum">Lesson @Model</h3>
-<h1 class="lessName">Qubit Amplitude</h1>
-<br />
+<div class="container lessQuizNum col-10">
+    <h3 class="lessQuizNum">Lesson @Model</h3>
+    <h1 class="lessName">Qubit Amplitude</h1><br />
 
-<div class="container border border-dark">
-    <p>
-        In quantum computing, when we talk about the "amplitude" of a qubit, we're referring to the "amount" of each state (|0⟩ or |1⟩) present in the qubit's superposition. Remember our magical coin? It's like how much "headness" and "tailness" the coin has before you look at it.
-        <br /><br />
-        To make it even simpler, let's imagine our magical coin is in a bag with many regular coins. Some are heads, and some are tails. The more heads coins there are in the bag, the greater the "headness" (the amplitude for the |1⟩ state). The more tails coins there are, the greater the "tailness" (the amplitude for the |0⟩ state). When you draw one coin from the bag without looking (make a measurement), you're more likely to draw a state (heads or tails) that has more coins in the bag (greater amplitude).
-        <br /><br />
-        Now, these "amounts" aren't ordinary numbers—they are complex numbers (which means they can involve the square root of -1, represented as 'i').
-        <br /><br />
-        Just remember: the larger the amplitude of a state, the higher the probability you will measure the qubit in that state. However, the rules of quantum mechanics also say that the sum of the squares of the amplitudes of all possible states must equal 1. This is because when you measure the qubit, it must fall into one of the possible states—you can't draw a coin and find nothing there!
-        <br /><br />
-        Keep in mind, this is quite a simplified explanation. The actual concept involves complex numbers and principles of quantum mechanics, which are a bit more complex and abstract. But the coin analogy should give you a basic understanding of what amplitude means in terms of qubits.
-    </p>
+    <div class="row">
+        <div class="col-8 fs-5">
+            In quantum computing, when we talk about the "amplitude" of a qubit, we're referring to the "amount" of each state (|0⟩ or |1⟩) present in the qubit's superposition. Remember our magical coin? It's like how much "headness" and "tailness" the coin has before you look at it.
+            <br /><br />
+            To make it even simpler, let's imagine our magical coin is in a bag with many regular coins. Some are heads, and some are tails. The more heads coins there are in the bag, the greater the "headness" (the amplitude for the |1⟩ state). The more tails coins there are, the greater the "tailness" (the amplitude for the |0⟩ state).<br /><br />
+            When you draw one coin from the bag without looking (make a measurement), you're more likely to draw a state (heads or tails) that has more coins in the bag (greater amplitude).
+            <br /><br />
+            Now, these "amounts" aren't ordinary numbers—they are complex numbers (which means they can involve the square root of -1, represented as 'i').<br />
+            i = &radic; -1
+            <br /><br />
+        </div>
+        <div class="col-4">
+            <img class="w-100 h-50 mt-5 rounded-3 border border-dark border-3" src="~/images/less9_Amp.jpg" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-8 fs-5">
+            Just remember: the larger the amplitude of a state, the higher the probability you will measure the qubit in that state. However, the rules of quantum mechanics also say that the sum of the squares of the amplitudes of all possible states must equal 1. This is because when you measure the qubit, it must fall into one of the possible states—you can't draw a coin and find nothing there!
+            <br /><br />
+            Keep in mind, this is quite a simplified explanation. The actual concept involves complex numbers and principles of quantum mechanics, which are a bit more complex and abstract. But the coin analogy should give you a basic understanding of what amplitude means in terms of qubits.
+        </div>
+        <div class="col-4">
+            <img class="w-100 h-50 rounded-3 border border-dark border-3" src="~/images/less9_AmpGIF.gif" />
+        </div>
+    </div>
+
+    @await Html.PartialAsync("_TakeQuizPrevNextButtons", Model)
 </div>
-
-@await Html.PartialAsync("_TakeQuizPrevNextButtons", Model)
