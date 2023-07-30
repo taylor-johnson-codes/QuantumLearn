@@ -4,24 +4,38 @@
     ViewData["Title"] = $"Lesson {Model}";
 }
 
-<h3 class="lessQuizNum">Lesson @Model</h3>
-<h1 class="lessName">Probability</h1>
-<br />
+<div class="container lessQuizNum col-10">
+    <h3 class="lessQuizNum">Lesson @Model</h3>
+    <h1 class="lessName">Probability</h1><br />
 
-<div class="container border border-dark">
-    <p>
-        In quantum computing, the concept of probability is a bit different than what we're used to in our everyday life, because it deals with the peculiar nature of quantum mechanics.
-        <br /><br />
-        In simple terms, let's go back to our magical coin analogy for qubits. Normally, if you flip a regular coin, there's a 50-50 chance—it's either heads or tails. But remember, our qubit is a magical coin. Before you look at it (measure it), it can be both heads and tails at the same time.
-        <br /><br />
-        Now, the "amount" of heads and tails (represented by the numbers α and β that we talked about before) in our magical coin's state affects the chances of seeing heads or tails when we decide to look at it.
-        <br /><br />
-        To get the probability (the chance) of finding the coin in a state—say heads—we take the "amount" of heads (β), multiply it by its complex conjugate (if β is a complex number, its conjugate is derived by changing the sign of its imaginary part), and this gives us the probability of finding the coin showing heads when measured. The same goes for tails.
-        <br /><br />
-        What's weird and wonderful about our magical coin is that it only "chooses" to be heads or tails when we look at it. Before we look, it's in a superposition of states—a mix of heads and tails. But the exact state it will be when we measure it is not certain—it's probabilistic, depending on these "amounts" of heads and tails (α and β).
-        <br /><br />
-        In other words, probability in quantum computing is about the chances of finding a qubit in a particular state when we measure it, which is determined by the state of the qubit just before measurement.
-    </p>
+    <div class="row">
+        <div class="col-9 fs-5">
+            In quantum computing, the concept of probability is a bit different than what we're used to in our everyday life, because it deals with the peculiar nature of quantum mechanics.
+            <br /><br />
+            In simple terms, let's go back to our magical coin analogy for qubits. Normally, if you flip a regular coin, there's a 50-50 chance—it's either heads or tails. But remember, our qubit is a magical coin. Before you look at it (measure it), it can be both heads and tails at the same time.
+            <br /><br />
+            Now, the "amount" of heads and tails (represented by the numbers α and β that we talked about before) in our magical coin's state affects the chances of seeing heads or tails when we decide to look at it.
+            <br /><br />
+        </div>
+        <div class="col-3">
+            <img class="w-100 h-50 mt-5 rounded-3 border border-dark border-3" src="~/images/less6_CoinSpin.jpg" />
+            <p class="text-center fst-italic">Coin is Heads & Tails While Spinning</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-9 fs-5">
+            <h5 class="fw-bold opacity-75">Complex Conjugate</h5>
+            To get the probability (the chance) of finding the coin in a state—say heads—we take the "amount" of heads (β), multiply it by its complex conjugate (if β is a complex number, its conjugate is derived by changing the sign of its imaginary part), and this gives us the probability of finding the coin showing heads when measured. The same goes for tails.
+            <br /><br />
+            What's weird and wonderful about our magical coin is that it only "chooses" to be heads or tails when we look at it. Before we look, it's in a superposition of states—a mix of heads and tails. But the exact state it will be when we measure it is not certain—it's probabilistic, depending on these "amounts" of heads and tails (α and β).
+            <br /><br />
+            In other words, probability in quantum computing is about the chances of finding a qubit in a particular state when we measure it, which is determined by the state of the qubit just before measurement.
+        </div>
+        <div class="col-3">
+            <img class="w-100 h-25 mt-5 rounded-3 border border-dark border-3" src="~/images/less7_CC.jpg" />
+        </div>
+    </div>
+
+    @await Html.PartialAsync("_TakeQuizPrevNextButtons", Model)
 </div>
-
-@await Html.PartialAsync("_TakeQuizPrevNextButtons", Model)
