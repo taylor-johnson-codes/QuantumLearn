@@ -64,18 +64,27 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
 }
 
-#tableHeader {
+.lessonName {
     font-family: 'Montserrat', sans-serif;
     color: #333;
     font-size: large;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
 }
 
-#tableBody {
-    font-family: 'Roboto', serif;
-    font-size: large;
+.lessonNum {
+    font-family: 'Montserrat', sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    font-size: medium;
 }
 
-.lessonName {
-    font-weight: bolder;
+.lessonPic {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: fill;
+    border-radius: 65px;
+}
+
+.card {
+    background-color: #c6e2f2;
 }

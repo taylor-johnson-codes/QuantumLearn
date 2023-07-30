@@ -4,86 +4,241 @@
 }
 
 <div>
-    <h1 class="display-4 text-center" id="lessonsTitle">QuantumLearn Lessons</h1>
-    <br />
-    <div class="row justify-content-center">
-        <div class="col-auto">
-            <table class="table w-75 table-hover caption-top border-dark table-responsive text-nowrap">
-                <thead id="tableHeader">
-                    <tr class="text-center">
-                        <th>Lesson #</th>
-                        <th>Lesson Name</th>
-                        <th>Quizzes</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-                    <tr>
-                        <td class="text-center w-100">1</td>
-                        <td><a type="button" class="d-grid gap-2 btn btn-primary lessonName" asp-controller="Lesson" asp-action="Num1">History of Quantum Computers</a></td>
-                        <td><a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz1">Take Quiz</a></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">2</td>
-                        <td><a type="button" class="d-grid gap-2 btn btn-primary lessonName" asp-controller="Lesson" asp-action="Num2">Classical vs Quantum Computers</a></td>
-                        <td><a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz2">Take Quiz</a></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">3</td>
-                        <td><a type="button" class="d-grid gap-2 btn btn-primary lessonName" asp-controller="Lesson" asp-action="Num3">Why Learn Quantum Computing</a></td>
-                        <td><a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz3">Take Quiz</a></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">4</td>
-                        <td><a type="button" class="d-grid gap-2 btn btn-primary lessonName" asp-controller="Lesson" asp-action="Num4">Qubits, Superposition & Entanglement</a></td>
-                        <td><a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz4">Take Quiz</a></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">5</td>
-                        <td><a type="button" class="d-grid gap-2 btn btn-primary lessonName" asp-controller="Lesson" asp-action="Num5">Imaginary Unit</a></td>
-                        <td><a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz5">Take Quiz</a></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">6</td>
-                        <td><a type="button" class="d-grid gap-2 btn btn-primary lessonName" asp-controller="Lesson" asp-action="Num6">Qubit State</a></td>
-                        <td><a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz6">Take Quiz</a></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">7</td>
-                        <td><a type="button" class="d-grid gap-2 btn btn-primary lessonName" asp-controller="Lesson" asp-action="Num7">Probability</a></td>
-                        <td><a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz7">Take Quiz</a></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">8</td>
-                        <td><a type="button" class="d-grid gap-2 btn btn-primary lessonName" asp-controller="Lesson" asp-action="Num8">Qubit Phase</a></td>
-                        <td><a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz8">Take Quiz</a></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">9</td>
-                        <td><a type="button" class="d-grid gap-2 btn btn-primary lessonName" asp-controller="Lesson" asp-action="Num9">Qubit Amplitude</a></td>
-                        <td><a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz9">Take Quiz</a></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">10</td>
-                        <td><a type="button" class="d-grid gap-2 btn btn-primary lessonName" asp-controller="Lesson" asp-action="Num10">Logic Gates</a></td>
-                        <td><a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz10">Take Quiz</a></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">11</td>
-                        <td><a type="button" class="d-grid gap-2 btn btn-primary lessonName" asp-controller="Lesson" asp-action="Num11">Quantum Gates Overview</a></td>
-                        <td><a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz11">Take Quiz</a></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">12</td>
-                        <td><a type="button" class="d-grid gap-2 btn btn-primary lessonName" asp-controller="Lesson" asp-action="Num12">Common Quantum Gates</a></td>
-                        <td><a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz12">Take Quiz</a></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">13</td>
-                        <td><a type="button" class="d-grid gap-2 btn btn-primary lessonName" asp-controller="Lesson" asp-action="Num13">Quantum Algorithms</a></td>
-                        <td><a type="button" class="btn btn-warning" asp-controller="Quiz" asp-action="Quiz13">Take Quiz</a></td>
-                    </tr>
-                </tbody>
-            </table>
+    <h1 class="display-4 text-center" id="lessonsTitle">QuantumLearn Lessons</h1><br />
+
+    <div class="container row row-cols-1 row-cols-md-3 g-4 justify-content-center h-100">
+        <div class="card mb-3 border-dark p-0 me-5 h-100">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="~/images/Less1Main.jpg" class="img-fluid rounded-start lessonPic" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="lessonNum">Lesson 1</h5>
+                        <p class="card-text lessonName">History of Quantum Computers</p>
+                        <p>
+                            <a type="button" class="btn btn-success btn-sm" asp-controller="Lesson" asp-action="Num1">Start Lesson</a>
+                            <a type="button" class="btn btn-warning btn-sm" asp-controller="Quiz" asp-action="Quiz1">Take Quiz</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 border-dark p-0 me-5 h-100">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="~/images/Less2Main.jpg" class="img-fluid rounded-start lessonPic" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="lessonNum">Lesson 2</h5>
+                        <p class="card-text lessonName">Classical vs Quantum Computers</p>
+                        <p>
+                            <a type="button" class="btn btn-success btn-sm" asp-controller="Lesson" asp-action="Num2">Start Lesson</a>
+                            <a type="button" class="btn btn-warning btn-sm" asp-controller="Quiz" asp-action="Quiz2">Take Quiz</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 border-dark p-0 me-5 h-100">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="~/images/Less3Main.jpg" class="img-fluid rounded-start lessonPic" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="lessonNum">Lesson 3</h5>
+                        <p class="card-text lessonName">Why Learn Quantum Computing</p>
+                        <p>
+                            <a type="button" class="btn btn-success btn-sm" asp-controller="Lesson" asp-action="Num3">Start Lesson</a>
+                            <a type="button" class="btn btn-warning btn-sm" asp-controller="Quiz" asp-action="Quiz3">Take Quiz</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 border-dark p-0 me-5 h-100">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="~/images/Less4Main.jpg" class="img-fluid rounded-start lessonPic" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="lessonNum">Lesson 4</h5>
+                        <p class="card-text lessonName">Qubits, Superposition & Entanglement</p>
+                        <p>
+                            <a type="button" class="btn btn-success btn-sm" asp-controller="Lesson" asp-action="Num4">Start Lesson</a>
+                            <a type="button" class="btn btn-warning btn-sm" asp-controller="Quiz" asp-action="Quiz4">Take Quiz</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 border-dark p-0 me-5 h-100">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="~/images/Less5Main.jpg" class="img-fluid rounded-start lessonPic" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="lessonNum">Lesson 5</h5>
+                        <p class="card-text lessonName">Imaginary Unit</p>
+                        <p>
+                            <a type="button" class="btn btn-success btn-sm" asp-controller="Lesson" asp-action="Num5">Start Lesson</a>
+                            <a type="button" class="btn btn-warning btn-sm" asp-controller="Quiz" asp-action="Quiz5">Take Quiz</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 border-dark p-0 me-5 h-100">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="~/images/Less6Main.jpg" class="img-fluid rounded-start lessonPic" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="lessonNum">Lesson 6</h5>
+                        <p class="card-text lessonName">Qubit State</p>
+                        <p>
+                            <a type="button" class="btn btn-success btn-sm" asp-controller="Lesson" asp-action="Num6">Start Lesson</a>
+                            <a type="button" class="btn btn-warning btn-sm" asp-controller="Quiz" asp-action="Quiz6">Take Quiz</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 border-dark p-0 me-5 h-100">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="~/images/Less7Main.jpg" class="img-fluid rounded-start lessonPic" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="lessonNum">Lesson 7</h5>
+                        <p class="card-text lessonName">Probability</p>
+                        <p>
+                            <a type="button" class="btn btn-success btn-sm" asp-controller="Lesson" asp-action="Num7">Start Lesson</a>
+                            <a type="button" class="btn btn-warning btn-sm" asp-controller="Quiz" asp-action="Quiz7">Take Quiz</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 border-dark p-0 me-5 h-100">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="~/images/Less8Main.jpg" class="img-fluid rounded-start lessonPic" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="lessonNum">Lesson 8</h5>
+                        <p class="card-text lessonName">Qubit Phase</p>
+                        <p>
+                            <a type="button" class="btn btn-success btn-sm" asp-controller="Lesson" asp-action="Num8">Start Lesson</a>
+                            <a type="button" class="btn btn-warning btn-sm" asp-controller="Quiz" asp-action="Quiz8">Take Quiz</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 border-dark p-0 me-5 h-100">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="~/images/Less9Main.jpg" class="img-fluid rounded-start lessonPic" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="lessonNum">Lesson 9</h5>
+                        <p class="card-text lessonName">Qubit Amplitude</p>
+                        <p>
+                            <a type="button" class="btn btn-success btn-sm" asp-controller="Lesson" asp-action="Num9">Start Lesson</a>
+                            <a type="button" class="btn btn-warning btn-sm" asp-controller="Quiz" asp-action="Quiz9">Take Quiz</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 border-dark p-0 me-5 h-100">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="~/images/Less10Main.jpg" class="img-fluid rounded-start lessonPic" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="lessonNum">Lesson 10</h5>
+                        <p class="card-text lessonName">Logic Gates</p>
+                        <p>
+                            <a type="button" class="btn btn-success btn-sm" asp-controller="Lesson" asp-action="Num10">Start Lesson</a>
+                            <a type="button" class="btn btn-warning btn-sm" asp-controller="Quiz" asp-action="Quiz10">Take Quiz</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card mb-3 border-dark p-0 me-5 h-100">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="~/images/Less11Main.jpg" class="img-fluid rounded-start lessonPic" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="lessonNum">Lesson 11</h5>
+                        <p class="card-text lessonName">Quantum Gates Overview</p>
+                        <p>
+                            <a type="button" class="btn btn-success btn-sm" asp-controller="Lesson" asp-action="Num11">Start Lesson</a>
+                            <a type="button" class="btn btn-warning btn-sm" asp-controller="Quiz" asp-action="Quiz11">Take Quiz</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 border-dark p-0 me-5 h-100">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="~/images/Less12Main.jpg" class="img-fluid rounded-start lessonPic" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="lessonNum">Lesson 12</h5>
+                        <p class="card-text lessonName">Common Quantum Gates</p>
+                        <p>
+                            <a type="button" class="btn btn-success btn-sm" asp-controller="Lesson" asp-action="Num12">Start Lesson</a>
+                            <a type="button" class="btn btn-warning btn-sm" asp-controller="Quiz" asp-action="Quiz12">Take Quiz</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 border-dark p-0 me-5 h-100">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="~/images/Less13Main.jpg" class="img-fluid rounded-start lessonPic" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="lessonNum">Lesson 13</h5>
+                        <p class="card-text lessonName">Quantum Algorithms</p>
+                        <p>
+                            <a type="button" class="btn btn-success btn-sm" asp-controller="Lesson" asp-action="Num13">Start Lesson</a>
+                            <a type="button" class="btn btn-warning btn-sm" asp-controller="Quiz" asp-action="Quiz13">Take Quiz</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
