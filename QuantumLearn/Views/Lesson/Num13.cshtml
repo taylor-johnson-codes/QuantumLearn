@@ -4,32 +4,37 @@
     ViewData["Title"] = $"Lesson {Model}";
 }
 
-<h3 class="lessQuizNum">Lesson @Model</h3>
-<h1 class="lessName">Quantum Algorithms</h1>
-<br />
+<div class="container lessQuizNum col-10">
+    <h3 class="lessQuizNum">Lesson @Model</h3>
+    <h1 class="lessName">Quantum Algorithms</h1><br />
 
-<div class="container border border-dark">
-    <p>
-        Quantum algorithms are a set of instructions that tell a quantum computer what to do. They're a special kind of algorithm designed to use the principles of quantum mechanics, including superposition, entanglement, and quantum interference, to solve certain types of problems much faster or more efficiently than classical algorithms.
-        <br /><br />
-        Unlike classical algorithms, where data is processed in a binary format (0s and 1s), quantum algorithms allow qubits to be in a superposition of states, perform computations on all possible states simultaneously, and then collapse to a single answer upon measurement.
-        <br /><br />
-        Here are a couple famous quantum algorithms:
-        <br /><br />
-        Shor's Algorithm: Proposed by Peter Shor in 1994, this algorithm can factor large numbers exponentially faster than the best known classical algorithm. This has significant implications for cryptography, as most current cryptographic systems rely on the difficulty of factoring large numbers.
-        <br /><br />
-        Grover's Algorithm: Developed by Lov Grover in 1996, this algorithm can search an unsorted database much faster than any classical algorithm. Grover's algorithm quadratically reduces the number of steps needed to find a particular element in an unsorted list, compared to classical methods.
-        <br /><br />
-        These algorithms exploit the unique behavior of quantum mechanics to speed up computations, and they're some of the reasons why there's so much excitement around quantum computing.
-        <br /><br />
-        There are several simple quantum algorithms that showcase the unique principles of quantum computation. Here are a couple examples:
-        <br /><br />
-        Deutsch's Algorithm: This was the first example of a quantum algorithm that performs better than the best classical algorithm. It solves a simple problem: determining whether a function is balanced (outputs 0 half of the time and 1 half of the time) or constant (always outputs the same value). While a classical algorithm would need two queries to solve this problem with certainty, Deutsch's algorithm only needs one.
-        <br /><br />
-        Bernstein-Vazirani Algorithm: This algorithm solves a problem of finding a secret number hidden within a function. Classically, finding the number would require several steps proportional to the number of bits in the secret number, but the Bernstein-Vazirani algorithm can find it in just one step.
-        <br /><br />
-        Each of these algorithms highlights a unique aspect of quantum computation and demonstrates why quantum algorithms can be more efficient than classical algorithms. Despite their simplicity, understanding these algorithms requires a basic understanding of quantum computing concepts like superposition, entanglement, and quantum gates.
-    </p>
+    <div class="row">
+        <div class="col-11 fs-5">
+            Quantum algorithms are a set of instructions that tell a quantum computer what to do. They're a special kind of algorithm designed to use the principles of quantum mechanics, including superposition, entanglement, and quantum interference, to solve certain types of problems much faster or more efficiently than classical algorithms.
+            <br /><br />
+            Unlike classical algorithms, where data is processed in a binary format (0s and 1s), quantum algorithms allow qubits to be in a superposition of states, perform computations on all possible states simultaneously, and then collapse to a single answer upon measurement.
+            <br /><br /><hr />
+            <p">Here are a couple famous quantum algorithms:</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-11 fs-5">
+            <h5 class="fw-bold opacity-75">Shor's Algorithm</h5>
+            Proposed by Peter Shor in 1994, this algorithm can factor large numbers exponentially faster than the best known classical algorithm. This has significant implications for cryptography, as most current cryptographic systems rely on the difficulty of factoring large numbers.<br /><br />
+            <h5 class="fw-bold opacity-75">Grover's Algorithm</h5>
+            Developed by Lov Grover in 1996, this algorithm can search an unsorted database much faster than any classical algorithm. Grover's algorithm quadratically reduces the number of steps needed to find a particular element in an unsorted list, compared to classical methods.<br /><br />
+            These algorithms exploit the unique behavior of quantum mechanics to speed up computations, and they're some of the reasons why there's so much excitement around quantum computing.
+            <br /><br /><hr />
+            There are several simple quantum algorithms that showcase the unique principles of quantum computation. Here are a couple examples:
+            <br /><br />
+            <h5 class="fw-bold opacity-75">Deutsch's Algorithm</h5>
+            This was the first example of a quantum algorithm that performs better than the best classical algorithm. It solves a simple problem: determining whether a function is balanced (outputs 0 half of the time and 1 half of the time) or constant (always outputs the same value). While a classical algorithm would need two queries to solve this problem with certainty, Deutsch's algorithm only needs one.<br /><br />
+            <h5 class="fw-bold opacity-75">Bernstein-Vazirani Algorithm</h5>
+            This algorithm solves a problem of finding a secret number hidden within a function. Classically, finding the number would require several steps proportional to the number of bits in the secret number, but the Bernstein-Vazirani algorithm can find it in just one step.<br /><br />
+            Each of these algorithms highlights a unique aspect of quantum computation and demonstrates why quantum algorithms can be more efficient than classical algorithms. Despite their simplicity, understanding these algorithms requires a basic understanding of quantum computing concepts like superposition, entanglement, and quantum gates.
+        </div>
+    </div>
+
+    @await Html.PartialAsync("_TakeQuizPrevNextButtons", Model)
 </div>
-
-@await Html.PartialAsync("_TakeQuizPrevNextButtons", Model)
