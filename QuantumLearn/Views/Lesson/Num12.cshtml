@@ -4,72 +4,109 @@
     ViewData["Title"] = $"Lesson {Model}";
 }
 
-<h3 class="lessQuizNum">Lesson @Model</h3>
-<h1 class="lessName">Common Quantum Gates</h1>
-<br />
+<div class="container lessQuizNum col-10">
+    <h3 class="lessQuizNum">Lesson @Model</h3>
+    <h1 class="lessName">Common Quantum Gates</h1><br />
 
-<div class="container border border-dark">
-    <p>
-        Here are some commonly used quantum gates:
-        <br /><br />
-        Pauli-X gate:<br />
-        This gate is like the NOT gate in classical computing. It switches the state of a qubit. So, if a qubit is in state |0⟩, the Pauli-X gate switches it to state |1⟩, and vice versa. It is often represented by the matrix:<br />
-        INSERT IMAGE OF MATRIX
-        <br /><br />
-        Real-world example: A light switch being flipping on and off
-        <br /><hr />
-        Pauli-Y gate:<br />
-        This gate is a combination of a bit flip (like the Pauli-X gate) and a phase flip. It's represented by the matrix:<br />
-        INSERT IMAGE OF MATRIX<br />
-        i is the imaginary unit
-        <br /><br />
-        Real-world example: A revolving door; you rotate & twist in it
-        <br /><hr />
-        Pauli-Z gate:<br />
-        Also known as a phase-flip gate, it leaves the |0⟩ state unchanged, while flipping the phase of the |1⟩ state. It's represented by the matrix:<br />
-        INSERT IMAGE OF MATRIX
-        <br /><br />
-        Real-world example: Spinning a top; it rotates around its core that stays put
-        <br /><br />
-        <fieldset class="border border-primary">
-            <legend class="float-none w-auto text-primary">Fun Fact</legend>
-            <p class="w-auto">The Pauli gates are named after Wolfgang Pauli, a physicist from Austria who made significant contributions to the field of quantum mechanics.</p>
-        </fieldset>
-        <hr />
-        Hadamard gate:<br />
-        This gate puts a qubit into a superposition of states, meaning after passing through this gate, a qubit in state |0⟩ or |1⟩ will be in a state that is a combination of |0⟩ and |1⟩. It's often represented by the matrix:<br />
-        INSERT IMAGE OF MATRIX
-        <br /><br />
-        Real-world example: Flipping a coin in the air; in air considered heads and tails
-        <br /><br />
-        <fieldset class="border border-primary">
-            <legend class="float-none w-auto text-primary">Fun Fact</legend>
-            <p>The Hadamard gate is named after Jacques Hadamard, a French mathematician, due to its relation to the Hadamard transform, which is a type of mathematical transformation used in data encryption and data compression algorithms.</p>
-        </fieldset>
-        <hr />
-        CNOT gate (Controlled NOT gate):<br />
-        This is a two-qubit gate that performs the NOT operation on the second qubit only when the first qubit is in state |1⟩. It's a fundamental gate for creating quantum entanglement between two qubits.
-        <br /><br />
-        Real-world example: A combination lock; 1st dial needs to be set before the 2nd dial can be set
-        <br /><hr />
-        T gate:<br />
-        Also known as a π/8 gate, this gate applies a π/4 phase shift. If the qubit is in state |1⟩, it multiplies its amplitude by e^(iπ/4), where e is the base of the natural logarithm, and i is the imaginary unit. The T gate is represented by the matrix:<br />
-        INSERT IMAGE OF MATRIX
-        <br /><br />
-        Real-world example: A color wheel rotates 45 degrees to set hue
-        <br /><hr />
-        Toffoli gate (also known as the "controlled-controlled-not" gate or "CCNOT" gate):<br />
-        This is a three-qubit gate that applies a Pauli-X (or NOT) gate to the third qubit if the first two qubits are in the state |1⟩, leaving all other states unchanged.
-        <br /><br />
-        Real-world example: A high security door; needs 2 keys at the same time to open door
-        <br /><br />
-        <fieldset class="border border-primary">
-            <legend class="float-none w-auto text-primary">Fun Fact</legend>
-            <p>The Toffoli gate is named after Tommaso Toffoli, an Italian physicist and computer engineer. Toffoli is known for his work in the field of reversible computing—a model of computation where every computational step can be reversed, which is different from most models of computation that have irreversible steps.</p>
-        </fieldset>
-        <hr />
-        These gates can be combined to create a huge variety of operations, and more complex quantum circuits. Just as in classical computing, where we combine simple gates like AND, OR, and NOT to create complex circuits, in quantum computing we can use these quantum gates and others to build complex quantum algorithms.
-    </p>
+    <div class="row">
+        <div class="col-9 fs-5">
+            <p class="fw-bold opacity-75">Here are some commonly used quantum gates:</p><br />
+        </div>
+        <div class="col-2">
+            <p class="text-center fw-bold opacity-75">Matrix Representations:</p><br />
+        </div>
+    </div>
+
+    <div class="row rowLess12">
+        <div class="col-9 fs-5">
+            <h5 class="fw-bold opacity-75">Pauli-X Gate</h5>
+            This gate is like the NOT gate in classical computing. It switches the state of a qubit. So, if a qubit is in state |0⟩, the Pauli-X gate switches it to state |1⟩, and vice versa.<br /><br />
+            Real-world analogy: A light switch being flipped on and off.
+        </div>
+        <div class="col-2">
+            <img class="w-100 h-50 rounded-3 border border-dark border-3" src="~/images/less12_PauliXmatrix.jpg" />
+        </div><hr />
+    </div>
+
+    <div class="row rowLess12">
+        <div class="col-9 fs-5">
+            <h5 class="fw-bold opacity-75">Pauli-Y Gate</h5>
+            This gate is a combination of a bit flip (like the Pauli-X gate) and a phase flip.<br /><br />
+            Real-world analogy: Walking in a revolving door (you rotate and twist in it).
+        </div>
+        <div class="col-2">
+            <img class="w-100 h-50 rounded-3 border border-dark border-3" src="~/images/less12_PauliYmatrix.jpg" />
+        </div><hr />
+    </div>
+
+    <div class="row rowLess12">
+        <div class="col-9 fs-5">
+            <h5 class="fw-bold opacity-75">Pauli-Z Gate</h5>
+            Also known as a phase-flip gate, it leaves the |0⟩ state unchanged, while flipping the phase of the |1⟩ state.<br /><br />
+            Real-world analogy: A spinning a top (it rotates around its core).
+        </div>
+        <div class="col-2">
+            <img class="w-100 h-50 rounded-3 border border-dark border-3" src="~/images/less12_PauliZmatrix.jpg" />
+        </div><hr />
+    </div>
+
+    <div class="row rowLess12">
+        <div class="col-9 fs-5">
+            <h5 class="fw-bold opacity-75">Hadamard Gate</h5>
+            This gate puts a qubit into a superposition of states, meaning after passing through this gate, a qubit in state |0⟩ or |1⟩ will be in a state that is a combination of |0⟩ and |1⟩.<br /><br />
+            Real-world analogy: Flipping a coin in the air (it's considered heads & tails in the air).
+        </div>
+        <div class="col-2">
+            <img class="w-100 h-50 rounded-3 border border-dark border-3" src="~/images/less12_HadaMatrix.jpg" />
+        </div><hr />
+    </div>
+
+    <div class="row rowLess12">
+        <div class="col-9 fs-5">
+            <h5 class="fw-bold opacity-75">CNOT (Controlled NOT) Gate</h5>
+            This is a two-qubit gate that performs the NOT operation on the second qubit only when the first qubit is in state |1⟩. It's a fundamental gate for creating quantum entanglement between two qubits.<br /><br />
+            Real-world analogy: A dual lock where the first dial needs to be set before the second dial can be set.
+        </div>
+        <div class="col-2">
+            <img class="w-100 h-50 rounded-3 border border-dark border-3" src="~/images/less12_CNOTmatrix.jpg" />
+        </div><hr />
+    </div>
+
+    <div class="row rowLess12">
+        <div class="col-9 fs-5">
+            <h5 class="fw-bold opacity-75">T Gate</h5>
+            Also known as a π/8 gate, this gate applies a π/4 phase shift. If the qubit is in state |1⟩, it multiplies its amplitude by e^(iπ/4), where e is the base of the natural logarithm, and i is the imaginary unit.<br /><br />
+            Real-world analogy: A color wheel rotated 45 degrees to set the hue.
+        </div>
+        <div class="col-2">
+            <img class="w-100 h-50 rounded-3 border border-dark border-3" src="~/images/less12_Tmatrix.jpg" />
+        </div><hr />
+    </div>
+
+    <div class="row rowLess12">
+        <div class="col-9 fs-5">
+            <h5 class="fw-bold opacity-75">Toffoli Gate</h5>
+            Also known as the "controlled-controlled-not" gate or "CCNOT" gate.<br />
+            This is a three-qubit gate that applies a Pauli-X gate to the third qubit if the first two qubits are in the state |1⟩, leaving all other states unchanged.<br /><br />
+            Real-world analogy: A high security door that needs two keys inserted at the same time to open the door.
+        </div>
+        <div class="col-2">
+            <img class="w-100 h-50 rounded-3 border border-dark border-3" src="~/images/less12_ToffoliMatrix.jpg" />
+        </div><hr />
+    </div>
+
+    <div class="row">
+        <div class="col-9 fs-5">
+            <p class="text-center fst-italic">A Quantum Circuit on 5 Qubits</p>
+            <img class="w-100 h-100 rounded-3 border border-dark border-3" src="~/images/less12_Circuit.jpg" />
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-9 fs-5">
+            <hr />These gates can be combined to create a huge variety of operations, and more complex quantum circuits. Just as in classical computing, where we combine simple gates like AND, OR, and NOT to create complex circuits, in quantum computing we can use these quantum gates and others to build complex quantum algorithms.
+        </div>
+    </div>
+
+    @await Html.PartialAsync("_TakeQuizPrevNextButtons", Model)
 </div>
-
-@await Html.PartialAsync("_TakeQuizPrevNextButtons", Model)
