@@ -88,6 +88,11 @@ body {
     background-color: #c6e2f2;
 }
 
+.disguisedLink {
+    color: black;
+    text-decoration: solid;
+}
+
 /* Individual Lesson & Quiz Pages */
 .lessQuizNum {
     font-family: 'Montserrat', sans-serif;
@@ -99,11 +104,6 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
 }
 
-.disguisedLink {
-    color: black;
-    text-decoration: solid;
-}
-
 /* Lesson 10 Page */
 .rowLess10 {
     height: 200px;
@@ -112,4 +112,22 @@ body {
 /* Lesson 12 Page */
 .rowLess12 {
     height: 250px;
+}
+
+/* Resources Page */
+.resFontTitle {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
+}
+
+.resFont {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.resText {
+    font-family: 'Montserrat', sans-serif;
 }
