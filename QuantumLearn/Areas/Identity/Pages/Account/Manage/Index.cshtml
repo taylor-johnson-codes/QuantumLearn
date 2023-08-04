@@ -1,9 +1,12 @@
 ﻿@page
 @model IndexModel
+@inject UserManager<ApplicationUser> UserManager
+
 @{
     ViewData["Title"] = "Profile";
     ViewData["ActivePage"] = ManageNavPages.Index;
 }
+
 
 <h3>@ViewData["Title"]</h3>
 <partial name="_StatusMessage" for="StatusMessage" />
@@ -16,36 +19,13 @@
                 <label asp-for="Username" class="form-label"></label>
             </div>
             <br />
-            <p class="text-danger">Working on pre-filling and editing first/last name</p>
-            <div class="form-floating">
-                @*NEED TO DISPLAY/EDIT FIRST NAME HERE*@
-                <input asp-for="Input.FirstName" class="form-control" />
-                <label asp-for="Input.FirstName" class="form-label"></label>
-                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-floating">
-                @*NEED TO DISPLAY/EDIT LAST NAME HERE*@
-                <input asp-for="Input.LastName" class="form-control" />
-                <label asp-for="Input.LastName" class="form-label"></label>
-                <span asp-validation-for="Input.LastName" class="text-danger"></span>
-            </div>
-            <br />
-            <div class="form-floating">
-                @*NEED TO DISPLAY/EDIT PHOTO HERE*@
-                <p class="text-danger">Working on displaying/editing photo here</p>
 
-                @*figure out how to grab image from database*@
-                @*convert the byte array from the database into a Base64 encoded string (which will form an "Image Data URL") to display it*@
-                @*PSUDO CODE:*@
-                @*if (IMAGE != null)
-                {
-                string imageBase64Data = Convert.ToBase64String(USER?.ImageDataForPizza);
-                string imageDataURL = string.Format($"data:image/jpeg;base64,{imageBase64Data}");
-                DISPLAY IMAGE
-                }*@
-            </div>
-            <br />
-            <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
+            <h4>
+                First Name: @UserManager.GetUserAsync(User).Result.FirstName<br />
+                Last Name: @UserManager.GetUserAsync(User).Result.LastName
+            </h4>
+
+            @*<button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>*@
         </form>
     </div>
 </div>
